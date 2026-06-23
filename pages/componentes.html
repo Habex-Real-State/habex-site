@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema de diseño — HABEX RE (muestra Fase A)</title>
+<meta name="description" content="Muestra de componentes del sistema de diseño editorial Luxury Natural de HABEX Real Estate.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<style>
+  /* Solo para esta página de muestra: etiquetas de cada bloque */
+  .demo-label{max-width:var(--wrap);margin:0 auto;padding:0 32px;display:flex;align-items:center;gap:14px;color:var(--dorado-oscuro);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+  .demo-label::before{content:"";flex:0 0 30px;height:1px;background:var(--dorado);opacity:.6}
+  .demo-block{padding:48px 0}
+  .demo-block.dark{background:var(--negro)}
+  .swatches{display:flex;flex-wrap:wrap;gap:14px}
+  .sw{width:96px}
+  .sw i{display:block;height:64px;border:1px solid var(--linea)}
+  .sw span{font-size:.64rem;letter-spacing:.08em;color:var(--texto2);margin-top:6px;display:block;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<!-- ===== Barra CTA sticky (demo) ===== -->
+<div class="sticky-cta">
+  <div class="bar">
+    <div class="meta"><b>Sistema de diseño HABEX</b><span>Muestra · Fase A</span></div>
+    <div class="acts">
+      <a href="#contacto-demo" class="btn btn-gold" style="padding:11px 22px">Contacto</a>
+      <a href="../index.html" class="btn btn-ghost-light" style="padding:11px 22px">Volver al sitio</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Hero de ficha (demo) ===== -->
+<section class="dp-hero">
+  <div class="bg" style="background-image:url('../assets/img/gran-kanan/gran-kanan-02.png')"></div>
+  <div class="wrap">
+    <div class="breadcrumb"><a href="../index.html">HABEX</a> · <span>Sistema de diseño</span></div>
+    <h1 class="reveal">Lenguaje visual <em style="font-style:italic;color:var(--dorado)">editorial</em></h1>
+    <p class="sub reveal">Muestra de los componentes que construirán las fichas de desarrollo. Aprueba el "look" antes de replicarlo en cada propiedad.</p>
+  </div>
+</section>
+
+<!-- ===== Tipografía editorial ===== -->
+<div class="demo-label">01 · Tipografía</div>
+<section class="demo-block">
+  <div class="wrap stagger">
+    <span class="index-num reveal">01</span>
+    <h2 class="display reveal">Donde tu inversión<br>echa <em>raíces</em></h2>
+    <p class="lead reveal" style="max-width:620px;margin-top:22px">Titulares Cormorant Garamond sobredimensionados con tracking ajustado; cuerpo Montserrat ligero. Alto contraste y mucho aire — la firma del lujo natural.</p>
+  </div>
+</section>
+
+<!-- ===== Botones ===== -->
+<div class="demo-label">02 · Botones e interacción</div>
+<section class="demo-block">
+  <div class="wrap" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+    <a class="btn btn-gold">Acción principal</a>
+    <a class="btn btn-ghost">Acción secundaria</a>
+    <span style="color:var(--texto2);font-size:.86rem">← pasa el cursor: brillo dorado + estados de foco accesibles</span>
+  </div>
+</section>
+
+<!-- ===== Paleta ===== -->
+<div class="demo-label">03 · Paleta "Luxury Natural"</div>
+<section class="demo-block">
+  <div class="wrap swatches">
+    <div class="sw"><i style="background:#0F0E0C"></i><span>Negro</span></div>
+    <div class="sw"><i style="background:#C2A24C"></i><span>Oro</span></div>
+    <div class="sw"><i style="background:#E4CD8F"></i><span>Oro claro</span></div>
+    <div class="sw"><i style="background:#E7DCC6"></i><span>Arena</span></div>
+    <div class="sw"><i style="background:#F5EFE3"></i><span>Crema</span></div>
+    <div class="sw"><i style="background:#34433A"></i><span>Verde</span></div>
+    <div class="sw"><i style="background:#B0734E"></i><span>Terracota</span></div>
+  </div>
+</section>
+
+<!-- ===== Galería + lightbox ===== -->
+<div class="demo-label">04 · Galería con lightbox</div>
+<section class="demo-block">
+  <div class="wrap">
+    <div class="gallery">
+      <a href="#lb1" class="g-big"><img src="../assets/img/casa-colonia-maya/colonia-maya-01.png" alt="Render principal" onerror="this.parentElement.style.background='linear-gradient(160deg,#34433a,#1a1714)'"></a>
+      <a href="#lb2"><img src="../assets/img/casa-colonia-maya/colonia-maya-02.png" alt="Vista 2"></a>
+      <a href="#lb3"><img src="../assets/img/casa-colonia-maya/colonia-maya-03.png" alt="Vista 3"></a>
+      <a href="#lb4" class="g-wide"><img src="../assets/img/casa-colonia-maya/colonia-maya-04.png" alt="Vista 4"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Cifras + precio ===== -->
+<div class="demo-label">05 · Cifras clave y tarjeta de precio</div>
+<section class="demo-block">
+  <div class="wrap">
+    <div class="dp-two">
+      <div>
+        <div class="facts stagger">
+          <div class="fact reveal"><b>285</b><span>m² de terreno</span></div>
+          <div class="fact reveal"><b>110</b><span>m² construcción</span></div>
+          <div class="fact reveal"><b>2</b><span>recámaras</span></div>
+          <div class="fact reveal"><b>4</b><span>autos</span></div>
+        </div>
+        <h3 style="font-size:1.8rem;margin:40px 0 16px">Especificaciones</h3>
+        <ul class="specs">
+          <li><span class="k">Tipo</span><span class="v">Casa de una planta · remodelada</span></li>
+          <li><span class="k">Entrega</span><span class="v">Inmediata</span></li>
+          <li><span class="k">Alberca</span><span class="v">Chukum</span></li>
+          <li><span class="k">Climatización</span><span class="v">3 minisplits</span></li>
+        </ul>
+      </div>
+      <aside class="dp-aside">
+        <div class="price-card">
+          <span class="tag">Precio de venta</span>
+          <div class="p">$4,500,000</div>
+          <div class="note">MXN · Apartado $50,000</div>
+          <div class="plans">
+            <div class="pl"><span class="k">Enganche</span><b>15%</b></div>
+            <div class="pl"><span class="k">Crédito</span><b>Infonavit / bancario</b></div>
+            <div class="pl"><span class="k">Recursos propios</span><b>Aceptado</b></div>
+          </div>
+          <a class="btn btn-gold" style="width:100%;justify-content:center">Solicitar información</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Avance de obra + ROI ===== -->
+<div class="demo-label">06 · Avance de obra y plusvalía</div>
+<section class="demo-block">
+  <div class="wrap reveal">
+    <div class="progress" style="max-width:640px;margin-bottom:48px">
+      <div class="head"><span style="letter-spacing:.16em;text-transform:uppercase;font-size:.72rem;color:var(--texto2)">Avance de obra</span><span class="pct">100%</span></div>
+      <div class="progress-bar"><i data-pct="100"></i></div>
+      <div class="stage">Etapa: entrega inmediata</div>
+    </div>
+    <div class="roi stagger">
+      <div class="r reveal-scale"><b>+12%</b><span>Plusvalía anual est.</span></div>
+      <div class="r reveal-scale"><b>5 años</b><span>Horizonte sugerido</span></div>
+      <div class="r reveal-scale"><b>100%</b><span>Seguridad jurídica</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Amenidades + mapa ===== -->
+<div class="demo-label">07 · Amenidades y ubicación</div>
+<section class="demo-block">
+  <div class="wrap">
+    <div class="amenities" style="margin-bottom:40px">
+      <span class="am"><svg viewBox="0 0 24 24"><path d="M2 12h20M12 2v20"/></svg>Alberca de chukum</span>
+      <span class="am"><svg viewBox="0 0 24 24"><path d="M3 21V8l9-5 9 5v13"/></svg>Terraza</span>
+      <span class="am"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>Cocina equipada</span>
+      <span class="am"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 6h16M4 18h16"/></svg>Vestidores</span>
+    </div>
+    <div class="mapbox">
+      <div class="pin">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-11a7 7 0 0114 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div style="font-family:var(--serif);font-size:1.4rem">Colonia Maya, Mérida</div>
+        <div style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,227,.6)">Junto a Altabrisa · Norte de Mérida</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Cinta CTA de cierre ===== -->
+<section class="sec dp-cta" id="contacto-demo">
+  <div class="wrap reveal">
+    <span class="eyebrow" style="color:var(--dorado-claro)">Siguiente paso</span>
+    <h2 class="display" style="color:var(--blanco);font-size:clamp(2.2rem,5vw,4rem);margin:14px 0 20px">¿Aprobamos este <em>lenguaje</em>?</h2>
+    <p class="lead" style="color:rgba(245,239,227,.72);max-width:520px;margin:0 auto 30px">Si te gusta la dirección, replico estos componentes en la ficha de Colonia Maya (Fase B) y luego en los 5 desarrollos restantes.</p>
+    <a href="../index.html" class="btn btn-gold">Volver al sitio</a>
+  </div>
+</section>
+
+<!-- ===== Lightboxes (CSS :target, sin JS) ===== -->
+<a href="#" class="lightbox" id="lb1"><span class="close">×</span><img src="../assets/img/casa-colonia-maya/colonia-maya-01.png" alt="Render principal ampliado"></a>
+<a href="#" class="lightbox" id="lb2"><span class="close">×</span><img src="../assets/img/casa-colonia-maya/colonia-maya-02.png" alt="Vista 2 ampliada"></a>
+<a href="#" class="lightbox" id="lb3"><span class="close">×</span><img src="../assets/img/casa-colonia-maya/colonia-maya-03.png" alt="Vista 3 ampliada"></a>
+<a href="#" class="lightbox" id="lb4"><span class="close">×</span><img src="../assets/img/casa-colonia-maya/colonia-maya-04.png" alt="Vista 4 ampliada"></a>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
