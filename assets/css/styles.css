@@ -385,3 +385,149 @@ body.dp .nav{background:rgba(15,14,12,.92);backdrop-filter:blur(8px);box-shadow:
   .sticky-cta .acts .btn-ghost-light{display:none}
   .sticky-cta .meta b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:50vw}
 }
+
+/* ============================================================
+   EXPLORA GRAN KANAN — galería premium por secciones
+   Tarjetas → submenús (privadas / membresías) → lightbox
+   ============================================================ */
+.explora{background:var(--blanco)}
+.xp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
+/* --- Tarjeta principal tipo portada --- */
+.xp-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+  min-height:clamp(380px,44vw,520px);padding:clamp(24px,3vw,34px);
+  color:var(--crema);overflow:hidden;cursor:pointer;text-align:left;width:100%;
+  font:inherit;border:1px solid rgba(194,162,76,.28);background:var(--carbon);
+  box-shadow:var(--sh-1);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.xp-card:hover,.xp-card:focus-visible{transform:translateY(-6px);box-shadow:var(--sh-3);outline:none}
+.xp-card:focus-visible{box-shadow:var(--sh-3),0 0 0 3px rgba(194,162,76,.5)}
+.xp-card .xp-cover{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;
+  background-image:var(--oro-grad);transition:transform .9s var(--ease);will-change:transform}
+.xp-card:hover .xp-cover{transform:scale(1.06)}
+.xp-card::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(transparent 28%,rgba(15,14,12,.55) 68%,rgba(15,14,12,.9));
+  transition:background .4s var(--ease)}
+.xp-card:hover::after{background:linear-gradient(transparent 18%,rgba(15,14,12,.6) 62%,rgba(15,14,12,.94))}
+.xp-card>*{position:relative;z-index:2}
+.xp-card .xp-ey{font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--dorado-claro);margin-bottom:10px}
+.xp-card h3{font-family:var(--serif);font-size:clamp(1.55rem,2.4vw,2.05rem);color:#fff;line-height:1.1}
+.xp-card .xp-sub{font-family:var(--serif);font-style:italic;color:var(--dorado-claro);font-size:1.05rem;margin-top:5px}
+.xp-card p{font-size:.88rem;color:rgba(245,239,227,.82);margin:13px 0 20px;max-width:42ch;line-height:1.6}
+.xp-card .xp-go{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;
+  border:1px solid var(--dorado);color:var(--dorado-claro);background:transparent;
+  padding:11px 20px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;
+  transition:background .3s var(--ease),color .3s var(--ease),gap .3s var(--ease)}
+.xp-card:hover .xp-go,.xp-card:focus-visible .xp-go{background:var(--dorado);color:var(--negro);gap:13px}
+.xp-card .xp-go svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2}
+.xp-card .xp-badge{position:absolute;top:0;right:0;z-index:3;
+  background:var(--oro-grad);color:var(--negro);font-size:.6rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;padding:8px 14px;box-shadow:0 6px 18px rgba(15,14,12,.4)}
+
+/* --- Overlay de submenú (privadas / membresías) y lightbox --- */
+.xp-modal,.xp-lb{position:fixed;inset:0;display:none;opacity:0;
+  transition:opacity .35s var(--ease)}
+.xp-modal{z-index:300;background:rgba(10,9,8,.93);backdrop-filter:blur(8px);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;padding:clamp(56px,8vh,90px) 18px 64px}
+.xp-lb{z-index:400;background:rgba(8,7,6,.97);flex-direction:column}
+.xp-modal.open,.xp-lb.open{display:block;opacity:1}
+.xp-lb.open{display:flex}
+.xp-modal.open .xp-panel{animation:xpRise .5s var(--ease) both}
+@keyframes xpRise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+.xp-x{position:fixed;top:16px;right:18px;z-index:6;width:48px;height:48px;border:0;cursor:pointer;
+  background:rgba(15,14,12,.55);color:var(--crema);border-radius:50%;font-size:1.5rem;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s}
+.xp-x:hover{background:var(--dorado);color:var(--negro);transform:rotate(90deg)}
+
+/* Cabecera del submenú */
+.xp-panel{max-width:1120px;margin:0 auto}
+.xp-head{text-align:center;color:var(--crema);max-width:680px;margin:0 auto 38px}
+.xp-head .eyebrow{display:inline-flex;align-items:center;gap:14px;color:var(--dorado-claro)}
+.xp-head .eyebrow::before,.xp-head .eyebrow::after{content:"";width:30px;height:1px;background:var(--dorado);opacity:.55}
+.xp-head h2{font-family:var(--serif);color:#fff;font-size:clamp(1.9rem,4vw,2.8rem);margin-top:14px}
+.xp-head p{color:rgba(245,239,227,.78);margin-top:14px;font-size:.95rem}
+
+/* Rejilla de fichas dentro del submenú */
+.xp-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.xp-tile{position:relative;display:flex;flex-direction:column;background:var(--carbon2);
+  border:1px solid rgba(194,162,76,.22);overflow:hidden;text-align:left}
+.xp-tile .xp-thumb{position:relative;aspect-ratio:4/3;background-size:cover;background-position:center;
+  background-image:var(--oro-grad);overflow:hidden}
+.xp-tile .xp-thumb>img,.xp-tile .xp-thumb>.xp-ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.xp-tile .xp-thumb::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(transparent 50%,rgba(15,14,12,.5))}
+.xp-tile .xp-tbadge,.xp-tile .xp-thumb>img,.xp-tile .xp-thumb>.xp-ph{z-index:1}
+.xp-tile .xp-tbadge{position:absolute;top:12px;left:12px;z-index:2;background:rgba(15,14,12,.72);
+  color:var(--dorado-claro);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px}
+.xp-tile .xp-tbody{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+.xp-tile h3{font-family:var(--serif);color:#fff;font-size:1.4rem;line-height:1.12}
+.xp-tile .xp-tnote{color:var(--dorado-claro);font-style:italic;font-family:var(--serif);font-size:.95rem;margin-top:2px}
+.xp-tile p{color:rgba(245,239,227,.74);font-size:.84rem;line-height:1.55;margin:10px 0 16px;flex:1}
+.xp-tile .xp-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.xp-tile .xp-acts .btn{padding:10px 16px;font-size:.66rem}
+.btn-gold-sm{background:var(--dorado);color:var(--negro);border:1px solid var(--dorado)}
+.btn-gold-sm:hover{background:var(--dorado-claro);transform:translateY(-2px)}
+.btn-ghost-gold{background:transparent;color:var(--dorado-claro);border:1px solid var(--dorado)}
+.btn-ghost-gold:hover{background:var(--dorado);color:var(--negro)}
+
+/* Nota legal / aviso dentro del submenú */
+.xp-note{max-width:780px;margin:30px auto 0;padding:16px 20px;border:1px solid rgba(194,162,76,.3);
+  background:rgba(194,162,76,.06);color:rgba(245,239,227,.8);font-size:.8rem;line-height:1.6;
+  display:flex;gap:12px;align-items:flex-start}
+.xp-note svg{width:18px;height:18px;stroke:var(--dorado-claro);fill:none;stroke-width:1.6;flex:0 0 auto;margin-top:2px}
+.xp-extra{max-width:1120px;margin:34px auto 0;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+/* --- Lightbox --- */
+.xp-lb-top{display:flex;align-items:center;justify-content:center;gap:16px;
+  padding:18px 70px;color:var(--crema);text-align:center}
+.xp-lb-top .xp-lb-title{font-family:var(--serif);font-size:1.15rem;color:#fff}
+.xp-lb-top .xp-lb-count{font-size:.78rem;letter-spacing:.14em;color:var(--dorado-claro);font-variant-numeric:tabular-nums}
+.xp-stage{flex:1;position:relative;display:flex;align-items:center;justify-content:center;
+  padding:0 clamp(12px,7vw,90px);min-height:0;touch-action:pan-y}
+.xp-stage figure{margin:0;max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;gap:12px}
+.xp-stage img{max-width:90vw;max-height:66vh;object-fit:contain;box-shadow:var(--sh-3);
+  background:var(--carbon);animation:xpImg .4s var(--ease) both}
+@keyframes xpImg{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
+.xp-stage figcaption{color:rgba(245,239,227,.7);font-size:.8rem;letter-spacing:.04em}
+.xp-arrow{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border:0;cursor:pointer;
+  background:rgba(15,14,12,.5);color:var(--crema);border-radius:50%;display:flex;align-items:center;justify-content:center;
+  transition:background .25s,transform .25s}
+.xp-arrow:hover{background:var(--dorado);color:var(--negro)}
+.xp-arrow svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
+.xp-arrow.prev{left:clamp(8px,2vw,26px)}
+.xp-arrow.next{right:clamp(8px,2vw,26px)}
+.xp-arrow[disabled]{opacity:.3;cursor:default;pointer-events:none}
+.xp-thumbs{display:flex;gap:10px;overflow-x:auto;padding:16px clamp(12px,5vw,40px) 22px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.xp-thumbs button{flex:0 0 auto;width:84px;height:62px;border:2px solid transparent;background:var(--carbon);
+  padding:0;cursor:pointer;overflow:hidden;opacity:.55;transition:opacity .25s,border-color .25s;scroll-snap-align:center}
+.xp-thumbs button img,.xp-thumbs button .xp-ph{width:100%;height:100%;object-fit:cover}
+.xp-thumbs button:hover{opacity:.85}
+.xp-thumbs button.active{opacity:1;border-color:var(--dorado)}
+
+/* Placeholder elegante cuando aún no hay imagen */
+.xp-ph{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(150deg,var(--verde),var(--carbon));color:var(--dorado-claro)}
+.xp-ph svg{width:34px;height:34px;stroke:currentColor;fill:none;stroke-width:1.3;opacity:.7}
+.xp-stage .xp-ph{width:min(80vw,640px);height:min(58vh,440px)}
+
+/* Texto de cierre de la sección */
+.xp-closing{max-width:760px;margin:54px auto 0;text-align:center;font-family:var(--serif);
+  font-size:clamp(1.15rem,2.4vw,1.55rem);font-style:italic;color:var(--texto);line-height:1.5}
+.xp-closing::before{content:"";display:block;width:54px;height:1px;background:var(--dorado);margin:0 auto 26px}
+
+/* --- Responsive --- */
+@media(max-width:900px){
+  .xp-grid{grid-template-columns:1fr}
+  .xp-tiles{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .xp-lb-top{padding:16px 60px}
+  .xp-stage img{max-height:58vh}
+  .xp-arrow{width:44px;height:44px}
+}
+@media(prefers-reduced-motion:reduce){
+  .xp-card,.xp-card .xp-cover,.xp-card .xp-go,.xp-x{transition:none}
+  .xp-modal.open .xp-panel,.xp-stage img{animation:none}
+  .xp-card:hover{transform:none}
+  .xp-card:hover .xp-cover{transform:none}
+}
