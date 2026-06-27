@@ -395,7 +395,8 @@ body.dp .nav{background:rgba(15,14,12,.92);backdrop-filter:blur(8px);box-shadow:
 
 /* --- Tarjeta principal tipo portada --- */
 .xp-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;
-  min-height:clamp(380px,44vw,520px);padding:clamp(24px,3vw,34px);
+  --xpad:clamp(24px,3vw,34px);
+  min-height:clamp(380px,44vw,520px);padding:var(--xpad);
   color:var(--crema);overflow:hidden;cursor:pointer;text-align:left;width:100%;
   font:inherit;border:1px solid rgba(194,162,76,.28);background:var(--carbon);
   box-shadow:var(--sh-1);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
@@ -422,6 +423,15 @@ body.dp .nav{background:rgba(15,14,12,.92);backdrop-filter:blur(8px);box-shadow:
 .xp-card .xp-badge{position:absolute;top:0;right:0;z-index:3;
   background:var(--oro-grad);color:var(--negro);font-size:.6rem;font-weight:700;
   letter-spacing:.16em;text-transform:uppercase;padding:8px 14px;box-shadow:0 6px 18px rgba(15,14,12,.4)}
+/* Panel/scrim de legibilidad detrás del texto — sangra a los bordes de la tarjeta
+   y cubre también el eyebrow; garantiza contraste >=4.5:1 sobre la foto. */
+.xp-card .xp-body{position:relative;display:flex;flex-direction:column;
+  margin:0 calc(-1*var(--xpad)) calc(-1*var(--xpad));
+  padding:58px var(--xpad) var(--xpad);
+  background:linear-gradient(to top,
+    rgba(10,9,8,.90) 0%, rgba(10,9,8,.87) 70%, rgba(10,9,8,.86) 84%, rgba(10,9,8,.32) 100%)}
+.xp-card .xp-ey{text-shadow:0 1px 3px rgba(0,0,0,.7)}
+.xp-card h3{text-shadow:0 1px 4px rgba(0,0,0,.5)}
 
 /* --- Overlay de submenú (privadas / membresías) y lightbox --- */
 .xp-modal,.xp-lb{position:fixed;inset:0;display:none;opacity:0;
