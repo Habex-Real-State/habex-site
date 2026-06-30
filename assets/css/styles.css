@@ -541,3 +541,127 @@ body.dp .nav{background:rgba(15,14,12,.92);backdrop-filter:blur(8px);box-shadow:
   .xp-card:hover{transform:none}
   .xp-card:hover .xp-cover{transform:none}
 }
+
+/* ============================================================
+   GRAN KANAN — Actualización creativa costera
+   Menos negro · más azul · más agua · más luz · hospitalidad.
+   Paleta de marca (azul Gran Kanan + azul Kokai) sobre arena/blanco.
+   Aditivo y mayormente scoped a .gk; no altera otras fichas.
+   ============================================================ */
+:root{
+  --gk-azul:#16315F; --gk-azul-2:#21407A; --gk-azul-rgb:22,49,95;
+  --kokai:#2C7A8C; --kokai-rgb:44,122,140;
+  --kokai-deep:#1C343A; --kokai-deep-rgb:28,52,58;
+}
+
+/* --- Logo de marca por desarrollo en las tarjetas del catálogo --- */
+.devcard .img{display:flex;align-items:center;justify-content:center}
+.devcard .img::before{content:"";position:absolute;inset:0;z-index:0;
+  background:linear-gradient(180deg,rgba(15,14,12,.34),rgba(15,14,12,.10) 45%,rgba(15,14,12,.30))}
+.devcard .img .pill{z-index:2}
+.dev-logo{position:relative;z-index:1;max-width:62%;max-height:48%;width:auto;
+  filter:drop-shadow(0 3px 12px rgba(0,0,0,.5))}
+.dev-logo.txt{font-family:var(--serif);color:#fff;text-align:center;line-height:1.05;
+  text-shadow:0 2px 12px rgba(0,0,0,.55);max-width:80%}
+.dev-logo.txt b{display:block;font-size:1.7rem;letter-spacing:.02em}
+.dev-logo.txt span{display:block;font-family:var(--sans);font-size:.56rem;font-weight:500;
+  letter-spacing:.34em;text-transform:uppercase;margin-top:8px;opacity:.92}
+
+/* --- Logo grande en el héroe de la ficha --- */
+.dp-logo{position:relative;z-index:3;width:auto;height:clamp(70px,9vw,108px);
+  margin-bottom:20px;filter:drop-shadow(0 4px 18px rgba(0,0,0,.45))}
+
+/* --- Héroe de Gran Kanan: tinte azul institucional, menos negro --- */
+.gk .dp-hero{background:var(--gk-azul)}
+.gk .dp-hero::after{background:linear-gradient(to top,
+  rgba(22,49,95,.90),rgba(22,49,95,.18) 58%,rgba(22,49,95,.42))}
+.gk .dp-hero .breadcrumb a,.gk .dp-hero .breadcrumb span{color:rgba(231,220,198,.92)}
+
+/* ============================================================
+   EXPLORA — tarjetas costeras (tinte de marca, no negro)
+   Cada tarjeta lleva su acento: azul GK · azul Kokai · océano.
+   ============================================================ */
+.gk .explora{background:linear-gradient(180deg,#fff 0%,var(--crema) 100%)}
+.gk .xp-card{--xp-rgb:var(--gk-azul-rgb);border:1px solid rgba(22,49,95,.16);background:var(--gk-azul)}
+.gk .xp-card[data-xp="chakte"]{--xp-rgb:var(--kokai-rgb)}
+.gk .xp-card[data-xp="mayakuna"]{--xp-rgb:var(--kokai-deep-rgb)}
+/* Velo global más claro y teñido a la marca (antes casi negro) */
+.gk .xp-card::after{background:linear-gradient(transparent 26%,
+  rgba(var(--xp-rgb),.34) 60%,rgba(var(--xp-rgb),.82))}
+.gk .xp-card:hover::after{background:linear-gradient(transparent 18%,
+  rgba(var(--xp-rgb),.40) 56%,rgba(var(--xp-rgb),.90))}
+/* Panel de legibilidad: azul de marca translúcido en vez de negro */
+.gk .xp-card .xp-body{background:linear-gradient(to top,
+  rgba(var(--xp-rgb),.95) 0%,rgba(var(--xp-rgb),.90) 60%,
+  rgba(var(--xp-rgb),.55) 84%,rgba(var(--xp-rgb),0) 100%)}
+.gk .xp-card .xp-ey{color:var(--arena)}
+.gk .xp-card .xp-sub{color:#fff;opacity:.94}
+.gk .xp-card p{color:rgba(255,255,255,.9)}
+/* Badge "incluida": dorado discreto conservado */
+.gk .xp-card .xp-badge{background:var(--oro-grad)}
+/* CTA claro y hospitalario (menos corporativo) */
+.gk .xp-card .xp-go{border:1px solid rgba(255,255,255,.65);color:#fff;background:rgba(255,255,255,.10)}
+.gk .xp-card:hover .xp-go,.gk .xp-card:focus-visible .xp-go{background:#fff;color:rgb(var(--xp-rgb));border-color:#fff}
+.gk .xp-card:focus-visible{box-shadow:var(--sh-3),0 0 0 3px rgba(255,255,255,.6)}
+/* Línea de membresías al pie de la tarjeta Mayakuná */
+.gk .xp-card .xp-meta{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--arena);margin:-6px 0 16px;display:flex;align-items:center;gap:8px}
+.gk .xp-card .xp-meta::before{content:"";width:22px;height:1px;background:var(--dorado);flex:0 0 auto}
+.gk .xp-closing{color:var(--gk-azul)}
+.gk .xp-closing::before{background:var(--kokai)}
+/* Subtítulo de sección dentro del modal (separa ecosistema / membresías) */
+.xp-sech{font-family:var(--serif);color:#fff;text-align:center;font-size:clamp(1.3rem,2.6vw,1.8rem);
+  margin:48px auto 26px;max-width:680px;display:flex;align-items:center;justify-content:center;gap:16px}
+.xp-sech::before,.xp-sech::after{content:"";flex:1;max-width:80px;height:1px;background:rgba(194,162,76,.45)}
+
+/* ============================================================
+   RESPALDADO POR UN ECOSISTEMA DE HOSPITALIDAD
+   Banda blanca minimalista · logos grandes · mucho aire.
+   ============================================================ */
+.eco-strip{background:#fff;padding:clamp(64px,9vw,112px) 0;text-align:center}
+.eco-strip .eyebrow{color:var(--kokai)}
+.eco-strip h2{font-family:var(--serif);color:var(--gk-azul);
+  font-size:clamp(1.5rem,3.2vw,2.3rem);margin:14px auto 0;max-width:18ch;line-height:1.14}
+.eco-logos{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
+  gap:clamp(26px,6vw,76px);margin:clamp(36px,5vw,56px) auto clamp(30px,4vw,42px)}
+.eco-logos img{width:auto;height:clamp(40px,5.2vw,58px);opacity:.95}
+.eco-logos img.gk{height:clamp(56px,7vw,80px)}
+.eco-logos .x{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2rem);
+  color:rgba(22,49,95,.32);font-style:italic;line-height:1}
+.eco-strip p{max-width:600px;margin:0 auto;color:var(--texto2);font-size:.96rem;line-height:1.7}
+
+/* ============================================================
+   VIVIRÁS EXPERIENCIAS ÚNICAS — banda azul institucional + playa
+   ============================================================ */
+.gk-experience{display:grid;grid-template-columns:1.02fr 1fr;min-height:clamp(430px,52vw,580px)}
+.gk-experience .panel{background:linear-gradient(150deg,var(--gk-azul-2),var(--gk-azul));
+  color:#fff;display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(40px,6vw,86px) clamp(28px,5vw,72px);position:relative;overflow:hidden}
+.gk-experience .panel::after{content:"";position:absolute;right:-60px;bottom:-60px;width:280px;height:280px;
+  border:1px solid rgba(255,255,255,.10);border-radius:50%}
+.gk-experience .panel .e-logo{width:auto;height:clamp(54px,7vw,82px);margin-bottom:26px;opacity:.96}
+.gk-experience .panel .eyebrow{color:var(--arena)}
+.gk-experience .panel h2{font-family:var(--serif);color:#fff;
+  font-size:clamp(2rem,4.4vw,3.3rem);margin:14px 0 18px;line-height:1.08;max-width:14ch}
+.gk-experience .panel p{color:rgba(231,220,198,.9);max-width:46ch;font-size:1.02rem;line-height:1.7}
+.gk-experience .panel .e-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.gk-experience .panel .e-tags span{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+  color:#fff;border:1px solid rgba(255,255,255,.34);padding:8px 14px;border-radius:40px}
+.gk-experience .photo{background-size:cover;background-position:center;min-height:300px;position:relative}
+.gk-experience .photo::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(120deg,rgba(22,49,95,.28),transparent 42%)}
+
+/* --- Responsive de las secciones nuevas --- */
+@media(max-width:860px){
+  .gk-experience{grid-template-columns:1fr}
+  .gk-experience .photo{min-height:300px;order:2}
+  .gk-experience .panel{order:1}
+  .eco-logos{gap:24px 36px}
+}
+@media(max-width:560px){
+  .eco-logos .x{display:none}
+  .dev-logo.txt b{font-size:1.45rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .gk-experience .panel::after{display:none}
+}
