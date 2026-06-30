@@ -639,7 +639,8 @@ body.dp .nav{background:rgba(15,14,12,.92);backdrop-filter:blur(8px);box-shadow:
   padding:clamp(40px,6vw,86px) clamp(28px,5vw,72px);position:relative;overflow:hidden}
 .gk-experience .panel::after{content:"";position:absolute;right:-60px;bottom:-60px;width:280px;height:280px;
   border:1px solid rgba(255,255,255,.10);border-radius:50%}
-.gk-experience .panel .e-logo{width:auto;height:clamp(54px,7vw,82px);margin-bottom:26px;opacity:.96}
+.gk-experience .panel .e-logo{align-self:flex-start;flex:0 0 auto;width:auto;max-width:100%;
+  height:clamp(54px,7vw,82px);margin-bottom:26px;opacity:.96}
 .gk-experience .panel .eyebrow{color:var(--arena)}
 .gk-experience .panel h2{font-family:var(--serif);color:#fff;
   font-size:clamp(2rem,4.4vw,3.3rem);margin:14px 0 18px;line-height:1.08;max-width:14ch}
