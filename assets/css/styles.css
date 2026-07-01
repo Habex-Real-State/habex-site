@@ -575,11 +575,13 @@ body.dp .nav{background:rgba(15,14,12,.92);backdrop-filter:blur(8px);box-shadow:
 .gk .dp-hero{background:var(--gk-azul)}
 /* La foto es el gancho: se muestra casi a plena luz, con velo solo abajo (legibilidad) */
 .gk .dp-hero .bg{opacity:.94}
-.gk .dp-hero::after{background:linear-gradient(to top,
-  rgba(22,49,95,.88) 0%,rgba(22,49,95,.10) 42%,rgba(22,49,95,.34) 100%)}
-.gk .dp-hero .breadcrumb a,.gk .dp-hero .breadcrumb span{color:rgba(231,220,198,.95)}
-.gk .dp-hero h1{max-width:15ch;text-shadow:0 2px 28px rgba(10,22,45,.7),0 1px 3px rgba(10,22,45,.6)}
-.gk .dp-hero .sub{max-width:34ch;text-shadow:0 2px 16px rgba(10,22,45,.85),0 1px 2px rgba(10,22,45,.75)}
+/* Doble velo: lateral izquierdo (donde vive el texto) + base — la foto queda brillante a la derecha */
+.gk .dp-hero::after{background:
+  linear-gradient(100deg,rgba(12,26,52,.9) 0%,rgba(12,26,52,.62) 34%,rgba(12,26,52,.12) 58%,rgba(12,26,52,0) 72%),
+  linear-gradient(to top,rgba(15,32,62,.82) 0%,rgba(15,32,62,.06) 46%,rgba(15,32,62,.22) 100%)}
+.gk .dp-hero .breadcrumb a,.gk .dp-hero .breadcrumb span{color:var(--dorado-claro);text-shadow:0 1px 10px rgba(8,18,38,.8)}
+.gk .dp-hero h1{max-width:15ch;text-shadow:0 2px 30px rgba(8,18,38,.85),0 1px 3px rgba(8,18,38,.7)}
+.gk .dp-hero .sub{max-width:34ch;color:rgba(247,242,232,.95);text-shadow:0 2px 16px rgba(8,18,38,.9),0 1px 2px rgba(8,18,38,.85)}
 
 /* GANCHO flotante arriba-derecha (en móvil pasa a barra superior) */
 .gk-hero-offer{position:absolute;z-index:4;top:clamp(84px,12vh,120px);right:clamp(16px,4vw,48px);
@@ -598,9 +600,9 @@ body.dp .nav{background:rgba(15,14,12,.92);backdrop-filter:blur(8px);box-shadow:
 .gk-ho-micro{font-size:.68rem;color:rgba(231,220,198,.8);text-align:center}
 
 /* Tira de fotos dentro del héroe → invita a ver la galería */
-.gk-hero-thumbs{position:relative;z-index:3;display:flex;gap:10px;align-items:center;margin-top:24px;flex-wrap:wrap}
-.gk-ht{display:block;width:88px;height:60px;border-radius:9px;overflow:hidden;border:1px solid rgba(231,220,198,.4);
-  box-shadow:0 8px 22px rgba(8,18,38,.35);transition:transform .25s ease,box-shadow .25s ease}
+.gk-hero-thumbs{position:relative;z-index:3;display:flex;gap:12px;align-items:center;margin-top:26px;flex-wrap:wrap}
+.gk-ht{display:block;width:132px;height:88px;border-radius:11px;overflow:hidden;border:1px solid rgba(231,220,198,.45);
+  box-shadow:0 10px 26px rgba(8,18,38,.4);transition:transform .25s ease,box-shadow .25s ease}
 .gk-ht img{width:100%;height:100%;object-fit:cover;display:block}
 .gk-ht:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(8,18,38,.5)}
 .gk-ht-more{display:inline-flex;align-items:center;gap:6px;width:auto;height:auto;padding:10px 16px;
@@ -615,12 +617,13 @@ body.dp .nav{background:rgba(15,14,12,.92);backdrop-filter:blur(8px);box-shadow:
     margin:0 clamp(16px,5vw,28px) 6px;box-shadow:0 10px 30px rgba(8,18,38,.35)}
   .gk .dp-hero .wrap{display:flex;flex-direction:column}
   .gk-hero-thumbs{margin-top:18px}
+  .gk-ht{width:108px;height:72px}
   /* El chip de galería ocupa su propia línea completa (no se corta) */
   .gk-ht-more{flex:1 0 100%;justify-content:center;margin-top:6px}
 }
 @media(max-width:420px){
   .gk-ho-price b{font-size:2.3rem}
-  .gk-ht{width:76px;height:54px}
+  .gk-ht{width:96px;height:64px}
   /* El chip de galería baja a su propia línea, no se corta */
   .gk-ht-more{width:100%;justify-content:center;margin-top:4px}
 }
