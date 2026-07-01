@@ -571,11 +571,59 @@ body.dp .nav{background:rgba(15,14,12,.92);backdrop-filter:blur(8px);box-shadow:
 .dp-logo{position:relative;z-index:3;width:auto;height:clamp(70px,9vw,108px);
   margin-bottom:20px;filter:drop-shadow(0 4px 18px rgba(0,0,0,.45))}
 
-/* --- Héroe de Gran Kanan: tinte azul institucional, menos negro --- */
+/* --- Héroe de Gran Kanan: imagen brillante + gancho arriba-derecha --- */
 .gk .dp-hero{background:var(--gk-azul)}
+/* La foto es el gancho: se muestra casi a plena luz, con velo solo abajo (legibilidad) */
+.gk .dp-hero .bg{opacity:.94}
 .gk .dp-hero::after{background:linear-gradient(to top,
-  rgba(22,49,95,.90),rgba(22,49,95,.18) 58%,rgba(22,49,95,.42))}
-.gk .dp-hero .breadcrumb a,.gk .dp-hero .breadcrumb span{color:rgba(231,220,198,.92)}
+  rgba(22,49,95,.88) 0%,rgba(22,49,95,.10) 42%,rgba(22,49,95,.34) 100%)}
+.gk .dp-hero .breadcrumb a,.gk .dp-hero .breadcrumb span{color:rgba(231,220,198,.95)}
+.gk .dp-hero h1{max-width:15ch;text-shadow:0 2px 28px rgba(10,22,45,.7),0 1px 3px rgba(10,22,45,.6)}
+.gk .dp-hero .sub{max-width:34ch;text-shadow:0 2px 16px rgba(10,22,45,.85),0 1px 2px rgba(10,22,45,.75)}
+
+/* GANCHO flotante arriba-derecha (en móvil pasa a barra superior) */
+.gk-hero-offer{position:absolute;z-index:4;top:clamp(84px,12vh,120px);right:clamp(16px,4vw,48px);
+  width:min(320px,86vw);display:flex;flex-direction:column;gap:7px;text-decoration:none;
+  padding:20px 22px 18px;border-radius:16px;
+  background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(22,49,95,.42));
+  backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+  border:1px solid rgba(231,220,198,.32);box-shadow:0 18px 50px rgba(8,18,38,.4)}
+.gk-ho-eyebrow{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dorado-claro);font-weight:600}
+.gk-ho-price{color:#fff;line-height:1;display:flex;align-items:baseline;gap:6px;margin-top:2px;flex-wrap:nowrap}
+.gk-ho-from{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,239,227,.85);font-weight:600}
+.gk-ho-price b{font-family:var(--serif,'Cormorant Garamond',serif);font-size:2.6rem;font-weight:500;letter-spacing:-.01em}
+.gk-ho-price i{font-style:normal;font-size:1rem;color:rgba(245,239,227,.9)}
+.gk-ho-terms{color:rgba(245,239,227,.94);font-size:.82rem;line-height:1.35}
+.gk-ho-cta{margin-top:8px;width:100%;text-align:center;justify-content:center;padding:13px 18px}
+.gk-ho-micro{font-size:.68rem;color:rgba(231,220,198,.8);text-align:center}
+
+/* Tira de fotos dentro del héroe → invita a ver la galería */
+.gk-hero-thumbs{position:relative;z-index:3;display:flex;gap:10px;align-items:center;margin-top:24px;flex-wrap:wrap}
+.gk-ht{display:block;width:88px;height:60px;border-radius:9px;overflow:hidden;border:1px solid rgba(231,220,198,.4);
+  box-shadow:0 8px 22px rgba(8,18,38,.35);transition:transform .25s ease,box-shadow .25s ease}
+.gk-ht img{width:100%;height:100%;object-fit:cover;display:block}
+.gk-ht:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(8,18,38,.5)}
+.gk-ht-more{display:inline-flex;align-items:center;gap:6px;width:auto;height:auto;padding:10px 16px;
+  border-radius:100px;background:rgba(231,220,198,.12);color:#fff;font-size:.8rem;letter-spacing:.02em;
+  text-decoration:none;font-weight:500;border:1px solid rgba(231,220,198,.4)}
+.gk-ht-more:hover{background:rgba(231,220,198,.22);transform:translateY(-2px)}
+
+@media(max-width:760px){
+  /* En móvil el gancho es lo PRIMERO: hero en columna, oferta arriba */
+  .gk .dp-hero{min-height:auto;flex-direction:column;align-items:stretch;padding:88px 0 clamp(28px,7vw,44px)}
+  .gk-hero-offer{position:relative;top:auto;right:auto;width:auto;order:-1;
+    margin:0 clamp(16px,5vw,28px) 6px;box-shadow:0 10px 30px rgba(8,18,38,.35)}
+  .gk .dp-hero .wrap{display:flex;flex-direction:column}
+  .gk-hero-thumbs{margin-top:18px}
+  /* El chip de galería ocupa su propia línea completa (no se corta) */
+  .gk-ht-more{flex:1 0 100%;justify-content:center;margin-top:6px}
+}
+@media(max-width:420px){
+  .gk-ho-price b{font-size:2.3rem}
+  .gk-ht{width:76px;height:54px}
+  /* El chip de galería baja a su propia línea, no se corta */
+  .gk-ht-more{width:100%;justify-content:center;margin-top:4px}
+}
 
 /* ============================================================
    EXPLORA — tarjetas costeras (tinte de marca, no negro)
