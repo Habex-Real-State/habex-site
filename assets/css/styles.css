@@ -599,6 +599,32 @@ body.dp .nav{background:rgba(15,14,12,.92);backdrop-filter:blur(8px);box-shadow:
 .gk-ho-cta{margin-top:8px;width:100%;text-align:center;justify-content:center;padding:13px 18px}
 .gk-ho-micro{font-size:.68rem;color:rgba(231,220,198,.8);text-align:center}
 
+/* EVENTO PRESENCIAL — tarjeta minimalista abajo-izquierda del héroe */
+.gk-hero-event{position:absolute;z-index:4;left:clamp(16px,4vw,48px);top:clamp(84px,12vh,120px);
+  width:min(320px,86vw);display:flex;flex-direction:column;gap:8px;text-decoration:none;
+  padding:23px 23px 21px;border-radius:16px;
+  background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(22,49,95,.42));
+  backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);
+  border:1.5px solid rgba(198,160,90,.7);
+  animation:gkHeCardPulse 1.7s ease-out infinite;transition:transform .25s ease}
+.gk-hero-event:hover{transform:translateY(-3px)}
+@keyframes gkHeCardPulse{
+  0%{box-shadow:0 18px 50px rgba(8,18,38,.4),0 0 0 0 rgba(198,160,90,.85);border-color:rgba(210,172,96,1)}
+  70%{box-shadow:0 18px 50px rgba(8,18,38,.4),0 0 0 13px rgba(198,160,90,0);border-color:rgba(198,160,90,.55)}
+  100%{box-shadow:0 18px 50px rgba(8,18,38,.4),0 0 0 0 rgba(198,160,90,0);border-color:rgba(198,160,90,.55)}
+}
+@media(prefers-reduced-motion:reduce){.gk-hero-event,.gk-he-dot{animation:none}.gk-hero-event{border-color:rgba(210,172,96,.85)}}
+.gk-he-eyebrow{display:flex;align-items:center;gap:7px;font-size:.62rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dorado-claro);font-weight:600}
+.gk-he-dot{flex:0 0 auto;width:7px;height:7px;border-radius:50%;background:var(--dorado);
+  animation:gkHePulse 2.4s ease-out infinite}
+@keyframes gkHePulse{0%{box-shadow:0 0 0 0 rgba(198,160,90,.55)}70%{box-shadow:0 0 0 8px rgba(198,160,90,0)}100%{box-shadow:0 0 0 0 rgba(198,160,90,0)}}
+.gk-he-title{font-family:var(--serif,'Cormorant Garamond',serif);color:#fff;font-size:1.72rem;
+  font-weight:500;line-height:1.08;letter-spacing:-.01em}
+.gk-he-when{color:rgba(245,239,227,.94);font-size:.84rem;line-height:1.38}
+.gk-he-cta{margin-top:8px;width:100%;text-align:center;justify-content:center;padding:12px 18px}
+.gk-he-micro{font-size:.66rem;color:rgba(231,220,198,.8);text-align:center}
+
 /* Tira de fotos dentro del héroe → invita a ver la galería */
 .gk-hero-thumbs{position:relative;z-index:3;display:flex;gap:12px;align-items:center;margin-top:26px;flex-wrap:wrap}
 .gk-ht{display:block;width:132px;height:88px;border-radius:11px;overflow:hidden;border:1px solid rgba(231,220,198,.45);
@@ -615,6 +641,8 @@ body.dp .nav{background:rgba(15,14,12,.92);backdrop-filter:blur(8px);box-shadow:
   .gk .dp-hero{min-height:auto;flex-direction:column;align-items:stretch;padding:88px 0 clamp(28px,7vw,44px)}
   .gk-hero-offer{position:relative;top:auto;right:auto;width:auto;order:-1;
     margin:0 clamp(16px,5vw,28px) 6px;box-shadow:0 10px 30px rgba(8,18,38,.35)}
+  .gk-hero-event{position:relative;left:auto;top:auto;width:auto;order:1;
+    margin:8px clamp(16px,5vw,28px) 0}
   .gk .dp-hero .wrap{display:flex;flex-direction:column}
   .gk-hero-thumbs{margin-top:18px}
   .gk-ht{width:108px;height:72px}
