@@ -846,3 +846,32 @@ body.dp .nav{background:rgba(15,14,12,.92);backdrop-filter:blur(8px);box-shadow:
 .gk-modal .btn-gold{width:100%;justify-content:center;margin-top:8px;padding:16px}
 .gk-modal-mini{margin-top:14px;font-size:.72rem;color:var(--texto2);text-align:center;line-height:1.5}
 @media(max-width:420px){.gk-field-row{grid-template-columns:1fr}}
+
+/* ============ Banner de cookies ============ */
+.cookie-bar{
+  position:fixed;left:50%;bottom:24px;transform:translate(-50%,160%);
+  z-index:9999;width:min(720px,calc(100% - 32px));
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+  background:var(--negro);border:1px solid rgba(194,162,76,.35);
+  border-radius:14px;padding:18px 22px;box-shadow:var(--sh-3);
+  opacity:0;font-family:var(--sans);
+  transition:transform .45s var(--ease),opacity .45s var(--ease);
+}
+.cookie-bar.show{transform:translate(-50%,0);opacity:1}
+.cookie-txt{margin:0;flex:1 1 240px;font-size:.9rem;line-height:1.55;color:var(--arena)}
+.cookie-btns{display:flex;gap:10px;flex:0 0 auto}
+.cookie-btn{
+  cursor:pointer;border-radius:999px;padding:10px 24px;
+  font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.02em;
+  border:1px solid rgba(231,220,198,.3);background:transparent;color:var(--crema);
+  transition:border-color .25s var(--ease),filter .25s var(--ease)
+}
+.cookie-btn:hover{border-color:var(--dorado)}
+.cookie-accept{background:var(--oro-grad);border-color:transparent;color:var(--negro);font-weight:600}
+.cookie-accept:hover{filter:brightness(1.06)}
+@media(max-width:520px){
+  .cookie-bar{bottom:0;left:0;transform:translateY(160%);width:100%;border-radius:14px 14px 0 0}
+  .cookie-bar.show{transform:translateY(0)}
+  .cookie-btns{width:100%}
+  .cookie-btn{flex:1}
+}

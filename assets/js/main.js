@@ -162,4 +162,50 @@
   if (gkForm) gkForm.addEventListener('submit', function () {
     if (gkForm.checkValidity()) habexTrack('generate_lead', { form_id: 'gkExpForm' });
   });
+
+  /* --- Banner de consentimiento de cookies (Consent Mode v2) --- */
+  (function () {
+    var KEY = 'habex-consent';
+    var choice = null;
+    try { choice = localStorage.getItem(KEY); } catch (e) {}
+
+    function grant() {
+      if (typeof gtag === 'function') gtag('consent', 'update', {
+        ad_storage: 'granted', ad_user_data: 'granted',
+        ad_personalization: 'granted', analytics_storage: 'granted'
+      });
+    }
+
+    if (choice === 'granted') { grant(); return; }   // ya aceptó antes
+    if (choice === 'denied') { return; }             // ya rechazó antes
+
+    // Sin decisión previa: mostrar banner
+    var bar = document.createElement('div');
+    bar.className = 'cookie-bar';
+    bar.id = 'habexCookies';
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-live', 'polite');
+    bar.innerHTML =
+      '<p class="cookie-txt" data-es="Usamos cookies para medir el tráfico del sitio y mejorar tu experiencia." data-en="We use cookies to measure site traffic and improve your experience.">Usamos cookies para medir el tráfico del sitio y mejorar tu experiencia.</p>' +
+      '<div class="cookie-btns">' +
+        '<button type="button" class="cookie-btn cookie-reject" data-es="Rechazar" data-en="Reject">Rechazar</button>' +
+        '<button type="button" class="cookie-btn cookie-accept" data-es="Aceptar" data-en="Accept">Aceptar</button>' +
+      '</div>';
+    document.body.appendChild(bar);
+    try { setLang(current); } catch (e) {}           // aplica idioma actual al banner
+    requestAnimationFrame(function () { bar.classList.add('show'); });
+
+    function close() {
+      bar.classList.remove('show');
+      setTimeout(function () { if (bar.parentNode) bar.parentNode.removeChild(bar); }, 400);
+    }
+    bar.querySelector('.cookie-accept').addEventListener('click', function () {
+      try { localStorage.setItem(KEY, 'granted'); } catch (e) {}
+      grant(); close();
+    });
+    bar.querySelector('.cookie-reject').addEventListener('click', function () {
+      try { localStorage.setItem(KEY, 'denied'); } catch (e) {}
+      close();
+    });
+  })();
 })();
