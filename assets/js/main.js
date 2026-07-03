@@ -136,6 +136,7 @@
       ? ["Hi, I'm " + nombre + '.', email && 'Email: ' + email, tel && 'Phone: ' + tel, mensaje && 'Message: ' + mensaje]
       : ['Hola, soy ' + nombre + '.', email && 'Correo: ' + email, tel && 'Teléfono: ' + tel, mensaje && 'Mensaje: ' + mensaje];
     var text = lines.filter(Boolean).join('\n');
+    if (typeof gtag === 'function') gtag('event', 'generate_lead', { form_id: 'contacto' });
     window.open('https://wa.me/525513423090?text=' + encodeURIComponent(text), '_blank');
     if (msg) {
       msg.className = 'form-msg ok';
@@ -146,4 +147,19 @@
     }
     return false;
   };
+
+  /* --- Google Analytics 4: rastreo de conversiones --- */
+  function habexTrack(name, params) {
+    if (typeof gtag === 'function') gtag('event', name, params || {});
+  }
+  // Clic en cualquier enlace de WhatsApp (wa.me / api.whatsapp)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp"]');
+    if (a) habexTrack('contact_whatsapp', { link_url: a.href, page_location: location.href });
+  });
+  // Envío válido del formulario de exploración (Gran Kanan)
+  var gkForm = document.getElementById('gkExpForm');
+  if (gkForm) gkForm.addEventListener('submit', function () {
+    if (gkForm.checkValidity()) habexTrack('generate_lead', { form_id: 'gkExpForm' });
+  });
 })();
