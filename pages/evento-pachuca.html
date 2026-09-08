@@ -972,6 +972,14 @@ var CONFIG = {
       correo:   document.getElementById('correo').value.trim(),
       interes:  document.getElementById('interes').value,
       evento:   'Presentacion privada SVATIA y Gran Kanan, Pachuca 19 sep 2026',
+      // Mismos 3 datos que el 'evento' de arriba, pero separados: la plantilla de
+      // WhatsApp y el workflow de n8n los usan como variables independientes
+      // ({{evento_nombre}}, {{evento_fecha}}, {{evento_lugar}}) para poder
+      // reusar la MISMA plantilla/workflow en el siguiente evento sin tocar
+      // codigo -- ver HEADERS en app/sheets.py y POST /leads/evento-pachuca.
+      eventoNombre: 'Gran Kanan y Svatia Telchac',
+      eventoFecha:  'sábado 19 de septiembre',
+      eventoLugar:  'Pachuca, Piso 77 Business Center',
       origen:   (document.referrer || 'directo'),
       utm:      window.location.search || '',
       fecha:    new Date().toLocaleString('es-MX', { timeZone:'America/Mexico_City' })
@@ -1008,7 +1016,10 @@ var CONFIG = {
         nombre: datos.nombre,
         telefono: datos.whatsapp,
         correo: datos.correo,
-        interes: datos.interes
+        interes: datos.interes,
+        evento_nombre: datos.eventoNombre,
+        evento_fecha: datos.eventoFecha,
+        evento_lugar: datos.eventoLugar
       })
     }).then(function(res){
       if(!res.ok) throw new Error('respuesta ' + res.status);
