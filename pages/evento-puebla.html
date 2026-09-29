@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coffee Break SVATIA Telchac — Tómate un café y asegura tu patrimonio · Puebla, 03 de octubre</title>
+<meta name="description" content="Coffee Break privado de SVATIA, Telchac, Yucatán, en Puebla. Sábado 3 de octubre, 11:00 am, Torre Inxignia. Terrenos desde $400,000 con financiamiento directo. Cupo limitado.">
+<meta property="og:title" content="Coffee Break SVATIA Telchac — Puebla, 03 de octubre">
+<meta property="og:description" content="Tómate un café y asegura tu patrimonio. Más de la mitad de SVATIA ya se vendió. Cupo limitado, solo con registro previo.">
+<meta property="og:image" content="../assets/img/svatia/svatia-01.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="../assets/img/logo/habex-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="../assets/img/svatia/svatia-01.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   COFFEE BREAK · SVATIA · Telchac, Yucatán
+   Puebla, sábado 3 de octubre. Landing de registro.
+   Desarrolla GH Desarrollos (+25 años desarrollando, #InversiónSegura).
+   Anfitrión: Manuel Barajas, GH Partner.
+   Paleta: verde azulado y terracota del master plan de SVATIA.
+   NOTA: esta pagina conserva el archivo, los campos del formulario, el JS
+   y CONFIG.API_URL/endpoint /leads/evento-pachuca sin cambios (los usan el
+   script de tunel y los workflows de n8n) -- solo cambio el contenido del
+   evento. El azul --kanan y las clases .kanan* quedan sin usar en el marcado
+   pero se dejan en la hoja de estilos por si un evento futuro los reutiliza.
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  --abismo:#061F1D;
+  --teal-hondo:#0B4A46;
+  --teal:#0E7C74;
+  --kanan:#3B4478;          /* azul del logotipo de Gran Kanan */
+  --kanan-hondo:#242B52;
+  --terracota:#B04A32;
+  --terracota-hi:#C85B41;
+  --alarma:#D9542F;
+  --oro:#C9A961;
+  --oro-luz:#E4CE96;
+  --crema:#F4ECDC;
+  --humo:rgba(244,236,220,.66);
+
+  --display:"Cormorant Garamond",Garamond,Georgia,serif;
+  --texto:"Manrope",system-ui,-apple-system,sans-serif;
+  --ancho:1280px;
+  --borde:rgba(201,169,97,.28);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--abismo);color:var(--crema);
+  font-family:var(--texto);font-size:17px;line-height:1.7;font-weight:400;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1;margin:0;letter-spacing:-.015em}
+p{margin:0}
+a{color:var(--oro-luz)}
+::selection{background:var(--terracota);color:#fff}
+.marco{width:100%;max-width:var(--ancho);margin:0 auto;padding:0 24px}
+.grano::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.24;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay
+}
+
+/* ── Aviso fijo superior ─────────────────────────────────────── */
+.aviso-top{
+  position:relative;z-index:30;background:var(--abismo);color:var(--oro-luz);
+  border-bottom:1px solid var(--borde);
+  text-align:center;padding:9px 16px;font-size:13px;font-weight:500;letter-spacing:.04em
+}
+.aviso-top b{font-weight:700;color:#fff}
+
+/* ── Encabezado ──────────────────────────────────────────────── */
+.tope{position:absolute;top:38px;left:0;right:0;z-index:20;padding:20px 0}
+.tope .marco{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.sellos{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.sellos img.sv{height:36px;filter:brightness(0) invert(1)}
+.sellos img.kn{height:30px;filter:brightness(0) invert(1)}
+.sellos img.gh{height:21px}
+.sellos .div{width:1px;height:26px;background:rgba(244,236,220,.24)}
+.tope .quien{font-size:13.5px;color:var(--humo);text-align:right;line-height:1.45}
+.tope .quien b{display:block;color:var(--oro-luz);font-weight:600}
+
+/* ── PORTADA ─────────────────────────────────────────────────── */
+.portada{position:relative;min-height:100svh;display:flex;align-items:center;
+         padding:130px 0 56px;overflow:hidden}
+.portada-foto{position:absolute;inset:0;z-index:0}
+.portada-foto img{width:100%;height:100%;object-fit:cover;object-position:62% 58%}
+.portada-foto::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(6,31,29,.62) 0%,rgba(6,31,29,.06) 30%,rgba(6,31,29,.16) 62%,rgba(6,31,29,.84) 100%),
+    linear-gradient(94deg,rgba(6,31,29,.93) 0%,rgba(6,31,29,.78) 30%,rgba(11,74,70,.34) 56%,rgba(11,74,70,0) 78%)
+}
+.portada .marco{position:relative;z-index:2}
+.portada-reja{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;align-items:center}
+
+/* 1 · Qué es: la banda que anuncia el evento */
+.declara{
+  display:inline-block;background:var(--alarma);color:#fff;
+  font-family:var(--texto);
+  padding:12px 28px;font-size:clamp(15px,2vw,23px);font-weight:800;
+  letter-spacing:.13em;text-transform:uppercase;line-height:1.25;
+  box-shadow:0 14px 34px -14px rgba(217,84,47,.9)
+}
+
+/* 2 · Qué se presenta: los dos desarrollos, con su logotipo real */
+.marcas-hero{
+  display:flex;align-items:center;gap:clamp(14px,2vw,26px);
+  margin-top:clamp(20px,2.8vw,32px);flex-wrap:wrap
+}
+.marcas-hero img{width:auto;filter:brightness(0) invert(1)}
+.marcas-hero .sv{height:clamp(50px,5.9vw,84px)}
+.marcas-hero .kn{height:clamp(26px,3vw,42px)}
+.marcas-hero .y{
+  font-family:var(--display);font-style:italic;font-weight:300;
+  font-size:clamp(20px,2.4vw,32px);color:var(--oro-luz);line-height:1
+}
+
+/* 3 · Dónde están: la zona */
+.zona{
+  margin-top:clamp(16px,2.2vw,24px);font-size:clamp(16px,2.1vw,26px);
+  font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--oro-luz);
+  line-height:1.3
+}
+
+/* 4 · Cuándo y dónde */
+.cuando{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:1px;
+  margin-top:clamp(22px,2.8vw,30px);
+  background:var(--borde);border:1px solid var(--borde)
+}
+.cuando > div{background:rgba(6,31,29,.66);padding:14px 18px;backdrop-filter:blur(6px)}
+.cuando .k{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+           color:var(--oro);font-weight:700;margin-bottom:5px}
+.cuando .v{display:block;font-family:var(--display);font-size:clamp(19px,2.2vw,24px);
+           color:#fff;line-height:1.2;font-weight:400;font-variant-numeric:lining-nums}
+
+/* 5 · La frase, ahora subordinada */
+.portada .bajada{
+  font-size:14.5px;line-height:1.58;color:rgba(244,236,220,.82);
+  margin-top:16px;max-width:58ch;font-weight:300
+}
+.portada .bajada b{color:#fff;font-weight:600}
+
+/* cuenta regresiva grande */
+.reloj{margin-top:22px}
+.reloj .rotulo{font-family:var(--texto);font-style:normal;font-size:12.5px;
+               letter-spacing:.13em;text-transform:uppercase;
+               color:var(--alarma);font-weight:700;margin-bottom:12px}
+.reloj-caja{display:flex;gap:9px;flex-wrap:wrap}
+.unidad{
+  min-width:70px;padding:11px 9px;text-align:center;
+  background:rgba(6,31,29,.6);border:1px solid var(--borde);backdrop-filter:blur(6px)
+}
+.unidad b{display:block;font-family:var(--display);font-size:36px;color:var(--oro-luz);
+          line-height:1;font-weight:400;font-variant-numeric:lining-nums tabular-nums}
+.unidad span{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+             color:var(--humo);margin-top:7px}
+
+@media (prefers-reduced-motion:no-preference){
+  .entra{opacity:0;transform:translateY(20px);animation:entra .9s cubic-bezier(.22,.8,.28,1) forwards}
+  .entra.d1{animation-delay:.06s} .entra.d2{animation-delay:.18s}
+  .entra.d3{animation-delay:.3s}  .entra.d4{animation-delay:.42s}
+  @keyframes entra{to{opacity:1;transform:none}}
+}
+
+/* ── Panel de registro ───────────────────────────────────────── */
+.panel{
+  background:rgba(6,31,29,.76);backdrop-filter:blur(20px) saturate(1.1);
+  border:1px solid var(--borde);padding:32px 30px 28px;
+  box-shadow:0 40px 90px -40px rgba(0,0,0,.9);scroll-margin-top:20px;position:relative
+}
+.panel::before{content:"";position:absolute;top:-1px;left:0;right:0;height:3px;background:var(--alarma)}
+.panel .urge{
+  display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--alarma);margin-bottom:12px
+}
+.panel .urge .brasa{
+  width:8px;height:8px;border-radius:50%;background:var(--alarma);flex:none;
+  animation:brasa 1.8s ease-out infinite
+}
+@keyframes brasa{
+  0%{box-shadow:0 0 0 0 rgba(217,84,47,.65)}
+  70%{box-shadow:0 0 0 10px rgba(217,84,47,0)}
+  100%{box-shadow:0 0 0 0 rgba(217,84,47,0)}
+}
+.panel h2{font-size:36px;color:#fff;font-weight:300}
+.panel .dice{font-size:14.5px;color:var(--humo);margin-top:10px;line-height:1.6;max-width:38ch}
+
+.campo{margin-top:16px}
+.campo label{display:block;font-size:13px;color:var(--oro-luz);margin-bottom:6px;letter-spacing:.02em}
+.campo input,.campo select{
+  width:100%;padding:13px 15px;font-family:var(--texto);font-size:16px;color:#fff;
+  background:rgba(244,236,220,.07);border:1px solid rgba(244,236,220,.2);border-radius:2px;
+  appearance:none;transition:border-color .18s,background .18s
+}
+.campo select{
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8'%3E%3Cpath d='M1 1l5.5 5.5L12 1' fill='none' stroke='%23E4CE96' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 15px center;padding-right:40px;cursor:pointer
+}
+.campo select option{background:var(--abismo);color:var(--crema)}
+.campo input::placeholder{color:rgba(244,236,220,.36)}
+.campo input:focus,.campo select:focus{outline:none;border-color:var(--oro);background:rgba(244,236,220,.12)}
+.campo input[aria-invalid="true"],.campo select[aria-invalid="true"]{
+  border-color:var(--terracota-hi);background:rgba(176,74,50,.14)}
+.alerta{display:none;font-size:13px;color:#F0B3A2;margin-top:6px}
+.alerta.ver{display:block}
+.permiso{display:flex;gap:12px;align-items:flex-start;margin-top:19px}
+.permiso input{flex:none;width:19px;height:19px;margin-top:3px;accent-color:var(--alarma);cursor:pointer}
+.permiso label{font-size:13px;color:var(--humo);line-height:1.55;cursor:pointer}
+.boton{
+  width:100%;min-height:60px;margin-top:20px;padding:19px 24px;border:0;border-radius:2px;
+  cursor:pointer;background:var(--alarma);color:#fff;font-family:var(--texto);
+  font-size:17px;font-weight:700;letter-spacing:.01em;
+  transition:background .18s,transform .1s;box-shadow:0 16px 38px -14px rgba(217,84,47,.95)
+}
+.boton:hover{background:#C24522}
+.boton:active{transform:translateY(1px)}
+.boton:focus-visible{outline:2px solid var(--oro-luz);outline-offset:3px}
+.boton[disabled]{opacity:.6;cursor:progress}
+.bajo{font-size:12.5px;color:rgba(244,236,220,.5);margin-top:13px;text-align:center;line-height:1.55}
+.listo{display:none;text-align:center;padding:8px 0}
+.listo.ver{display:block}
+.listo .palomita{width:62px;height:62px;margin:0 auto 20px;border-radius:50%;
+                 border:1px solid var(--oro);display:flex;align-items:center;justify-content:center}
+.listo .palomita svg{stroke:var(--oro-luz);fill:none;stroke-width:1.6}
+.listo h2{margin-bottom:13px}
+.listo p{color:var(--humo);font-size:15px;line-height:1.65;margin-bottom:22px}
+.listo .boton{background:#1FA855;box-shadow:0 16px 38px -14px rgba(31,168,85,.9);
+              display:block;text-decoration:none;text-align:center;line-height:1.4}
+.listo .boton:hover{background:#188C46}
+
+/* ── Franja de urgencia ──────────────────────────────────────── */
+.franja{background:var(--terracota);padding:0}
+.franja-reja{display:grid;grid-template-columns:minmax(0,1fr);gap:1px;background:rgba(255,255,255,.22)}
+.golpe{background:var(--terracota);padding:30px 26px}
+.golpe b{display:block;font-family:var(--display);font-size:clamp(38px,5.4vw,54px);
+         color:#fff;line-height:.95;font-weight:400;font-variant-numeric:lining-nums}
+.golpe span{display:block;font-size:14.5px;color:rgba(255,255,255,.9);margin-top:11px;
+            line-height:1.55;font-weight:300}
+
+/* ── Secciones ───────────────────────────────────────────────── */
+section{padding:88px 0}
+.rotulo{font-family:var(--display);font-style:italic;font-size:21px;color:var(--oro);
+        margin-bottom:13px;font-weight:400}
+.titular{font-size:clamp(34px,5.2vw,60px);font-weight:300;color:#fff;
+         letter-spacing:-.022em;max-width:20ch;line-height:1.03}
+.parrafo{font-size:17px;line-height:1.75;color:var(--humo);margin-top:20px;
+         max-width:58ch;font-weight:300}
+
+/* Los dos desarrollos */
+.dos{background:var(--teal-hondo)}
+.dos-reja{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;margin-top:44px}
+.ficha{border:1px solid var(--borde);overflow:hidden;position:relative;display:flex;flex-direction:column}
+.ficha .foto{height:230px;position:relative;overflow:hidden}
+.ficha .foto img{width:100%;height:100%;object-fit:cover}
+.ficha .foto::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(6,31,29,.1) 40%,rgba(6,31,29,.88) 100%)}
+.ficha .marca{position:absolute;left:22px;bottom:18px;z-index:2}
+.ficha .marca img{height:34px;filter:brightness(0) invert(1)}
+.ficha .cuerpo{padding:24px 22px;background:rgba(6,31,29,.5);flex:1}
+.ficha .lema{font-family:var(--display);font-style:italic;font-size:18px;color:var(--oro-luz)}
+.ficha .lista{margin:16px 0 0;padding:0;list-style:none}
+.ficha .lista li{padding:9px 0;border-bottom:1px solid rgba(201,169,97,.18);
+                 display:flex;justify-content:space-between;gap:16px;font-size:14.5px;
+                 color:var(--humo);font-weight:300}
+.ficha .lista li b{color:#fff;font-weight:600;text-align:right;white-space:nowrap}
+.ficha.kanan .foto::after{background:linear-gradient(180deg,rgba(36,43,82,.1) 40%,rgba(36,43,82,.9) 100%)}
+.ficha.kanan .cuerpo{background:rgba(36,43,82,.42)}
+
+/* master plan */
+.plan-foto{margin-top:40px;border:1px solid var(--borde);overflow:hidden}
+.plan-foto img{width:100%}
+.privadas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:1px;
+          background:var(--borde);border:1px solid var(--borde)}
+.privada{background:var(--teal-hondo);padding:22px 20px}
+.privada h3{font-family:var(--display);font-size:29px;color:#fff;font-weight:400;letter-spacing:.04em}
+.privada .lotes{font-family:var(--display);font-size:36px;color:var(--oro-luz);line-height:1;
+                margin-top:12px;font-weight:300;font-variant-numeric:lining-nums}
+.privada .cuando{font-size:13px;color:var(--humo);margin-top:6px;line-height:1.45}
+.privada.pronto{background:rgba(176,74,50,.24)}
+.privada.pronto .cuando{color:#F0C4B6}
+
+/* mosaico */
+.mosaico{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:44px}
+.pieza{position:relative;overflow:hidden;min-height:260px}
+.pieza img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+           transition:transform 1.1s cubic-bezier(.2,.7,.3,1)}
+.pieza:hover img{transform:scale(1.04)}
+.pieza .velo{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(6,31,29,.05) 32%,rgba(6,31,29,.9) 100%)}
+.pieza .letra{position:absolute;left:0;right:0;bottom:0;padding:24px 22px;z-index:2}
+.pieza .letra h3{font-size:32px;color:#fff;font-weight:300;letter-spacing:.02em}
+.pieza .letra .cual{font-family:var(--display);font-style:italic;font-size:16px;
+                    color:var(--oro-luz);margin-top:3px}
+.pieza .letra p{font-size:14px;color:rgba(244,236,220,.86);margin-top:10px;line-height:1.6}
+.pieza.alta{min-height:380px}
+.pieza.fuego img{object-position:50% 42%}
+.pieza.trazo{background:var(--teal-hondo)}
+.pieza.trazo img{filter:grayscale(1) brightness(.42) contrast(1.05);mix-blend-mode:luminosity;opacity:.55}
+.pieza.trazo .velo{background:linear-gradient(180deg,rgba(11,74,70,.62) 0%,rgba(6,31,29,.8) 40%,rgba(6,31,29,.97) 100%)}
+
+/* Gran Kanan */
+.kanan-sec{background:var(--kanan-hondo)}
+.kanan-sec .rotulo{color:#B9C0E8}
+.kanan-cifras{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;
+              margin-top:40px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16)}
+.kanan-cifras div{background:var(--kanan-hondo);padding:24px 20px;text-align:center}
+.kanan-cifras b{display:block;font-family:var(--display);font-size:clamp(40px,6vw,58px);
+                color:#fff;line-height:.95;font-weight:300;font-variant-numeric:lining-nums}
+.kanan-cifras span{display:block;font-size:13px;color:rgba(255,255,255,.7);margin-top:10px;line-height:1.45}
+
+/* Ubicación */
+.mapa{margin-top:40px;border:1px solid var(--borde);overflow:hidden}
+.mapa img{width:100%}
+
+/* Condiciones */
+.cond-reja{margin-top:38px;border-top:1px solid var(--borde)}
+.cond{padding:24px 0;border-bottom:1px solid var(--borde);
+      display:grid;grid-template-columns:minmax(0,1fr);gap:9px}
+.cond h3{font-size:25px;color:#fff;font-weight:400}
+.cond p{font-size:15.5px;color:var(--humo);line-height:1.7;font-weight:300}
+
+/* Lo que te pierdes */
+.pierdes{background:var(--terracota);position:relative;overflow:hidden}
+.pierdes .titular{color:#fff;max-width:22ch}
+.pierdes .parrafo{color:rgba(255,255,255,.88)}
+.pierdes .rotulo{color:rgba(255,255,255,.72)}
+.perdidas{margin-top:40px;padding:0;list-style:none;border-top:1px solid rgba(255,255,255,.3)}
+.perdidas li{padding:22px 0;border-bottom:1px solid rgba(255,255,255,.3);
+             display:grid;grid-template-columns:minmax(0,1fr);gap:7px}
+.perdidas b{font-family:var(--display);font-size:25px;color:#fff;font-weight:400}
+.perdidas p{font-size:15.5px;color:rgba(255,255,255,.88);line-height:1.65;font-weight:300}
+
+/* Evento */
+.evento{position:relative;overflow:hidden}
+.evento-foto{position:absolute;inset:0;z-index:0}
+.evento-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.evento-foto::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(6,31,29,.96) 26%,rgba(6,31,29,.74) 64%,rgba(11,74,70,.6) 100%)}
+.evento .marco{position:relative;z-index:2}
+.donde{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin-top:40px}
+.dato .k{font-size:12.5px;color:var(--oro);letter-spacing:.03em;margin-bottom:6px}
+.dato .v{font-family:var(--display);font-size:27px;color:#fff;line-height:1.15;font-weight:400}
+.dato .v small{display:block;font-family:var(--texto);font-size:14px;color:var(--humo);
+               margin-top:7px;line-height:1.6;font-weight:300}
+.pasos{margin-top:42px;padding:0;list-style:none;border-top:1px solid var(--borde)}
+.pasos li{padding:20px 0;border-bottom:1px solid var(--borde);
+          display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
+.pasos b{font-family:var(--display);font-size:24px;font-weight:400;color:#fff}
+.pasos p{font-size:15px;color:var(--humo);line-height:1.65;font-weight:300}
+
+/* Cierre */
+.cierre{position:relative;overflow:hidden;text-align:center;padding:118px 0}
+.cierre-foto{position:absolute;inset:0;z-index:0}
+.cierre-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.cierre-foto::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 50%,rgba(6,31,29,.74) 0%,rgba(6,31,29,.96) 72%)}
+.cierre .marco{position:relative;z-index:2}
+.cierre h2{font-size:clamp(36px,6.6vw,76px);color:#fff;font-weight:300;
+           letter-spacing:-.026em;margin:0 auto;max-width:17ch;line-height:1}
+.cierre h2 em{font-style:italic;color:var(--oro-luz)}
+.cierre p{font-size:17.5px;color:var(--humo);margin:24px auto 0;max-width:48ch;
+          line-height:1.7;font-weight:300}
+.cierre .ir{display:inline-block;margin-top:34px;background:var(--alarma);color:#fff;
+            text-decoration:none;padding:21px 48px;font-size:17px;font-weight:700;
+            box-shadow:0 18px 44px -16px rgba(217,84,47,1)}
+.cierre .ir:hover{background:#C24522}
+.cierre .cuenta{font-size:15px;color:var(--oro-luz);margin-top:20px}
+
+/* Pie */
+footer{background:var(--abismo);padding:60px 0 38px;border-top:1px solid var(--borde);
+       font-size:14px;color:var(--humo)}
+.pie-reja{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+.pie-reja h4{font-family:var(--display);font-size:19px;color:var(--oro-luz);margin:0 0 9px;font-weight:400}
+.pie-reja p{line-height:1.7;font-weight:300}
+.chico{margin-top:32px;padding-top:20px;border-top:1px solid rgba(244,236,220,.12);
+       font-size:12px;color:rgba(244,236,220,.42);line-height:1.7;font-weight:300}
+
+/* WhatsApp + barra móvil */
+.wsp{position:fixed;right:16px;bottom:16px;z-index:60;width:54px;height:54px;border-radius:50%;
+     background:#1FA855;display:flex;align-items:center;justify-content:center;
+     box-shadow:0 12px 30px -8px rgba(0,0,0,.7);text-decoration:none;transition:transform .2s}
+.wsp:hover{transform:scale(1.07)}
+.wsp svg{width:28px;height:28px;fill:#fff}
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:55;background:rgba(6,31,29,.95);
+       backdrop-filter:blur(14px);border-top:2px solid var(--alarma);
+       padding:9px 14px calc(9px + env(safe-area-inset-bottom));
+       display:flex;gap:12px;align-items:center;justify-content:space-between}
+.barra .q{font-size:12px;color:var(--humo);line-height:1.35}
+.barra .q b{display:block;color:var(--alarma);font-size:13.5px;font-weight:700}
+.barra a{background:var(--alarma);color:#fff;text-decoration:none;padding:14px 20px;
+         font-size:14.5px;font-weight:700;white-space:nowrap;min-height:48px;
+         display:flex;align-items:center;border-radius:2px}
+
+/* ── Anchos mayores ──────────────────────────────────────────── */
+@media (min-width:700px){
+  .franja-reja{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cuando{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .dos-reja{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .privadas{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .kanan-cifras{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .donde{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+  .cond{grid-template-columns:minmax(0,290px) minmax(0,1fr);gap:32px;align-items:baseline}
+  .pasos li,.perdidas li{grid-template-columns:minmax(0,330px) minmax(0,1fr);gap:28px;align-items:baseline}
+  .mosaico{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+  .pie-reja{grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px}
+}
+@media (min-width:1040px){
+  .marco{padding:0 40px}
+  .portada-reja{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:56px}
+  .panel{padding:36px 34px 32px}
+  section{padding:112px 0}
+  .mosaico{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .pieza.todo{grid-column:1/-1}
+  .pieza{min-height:320px}
+  .pieza.alta{min-height:440px}
+  .ficha .foto{height:280px}
+  .barra{display:none}
+  .wsp{right:26px;bottom:26px;width:58px;height:58px}
+}
+@media (max-width:1039px){
+  body{padding-bottom:74px}
+  .wsp{bottom:80px}
+  .tope{position:static;padding:18px 0;background:var(--abismo)}
+  .tope .quien{text-align:left}
+  .portada{padding:56px 0 60px;min-height:0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none !important;transition:none !important}
+  .entra{opacity:1 !important;transform:none !important}
+}
+</style>
+</head>
+<body>
+
+<p class="aviso-top">Acceso <b>solo con registro previo</b>. El cupo lo limita la capacidad de la sede.</p>
+
+<header class="tope">
+  <div class="marco">
+    <div class="sellos">
+      <img src="../assets/img/logo/desarrollos/svatia-white.png" alt="SVATIA Telchac" class="sv">
+      <span class="div"></span>
+      <!-- PENDIENTE: sustituir por el logotipo real de GH Desarrollos en cuanto lo compartan (no
+           existe todavia en assets/img/logo) -- por ahora texto plano para no mostrar un icono roto. -->
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--humo);font-weight:600">GH Desarrollos · +25 años desarrollando</span>
+    </div>
+    <p class="quien">Anfitrión: Manuel Barajas, GH Partner<b>Habex Real Estate · WhatsApp 56 3511 5599</b></p>
+  </div>
+</header>
+
+<!-- ══════════ PORTADA ══════════ -->
+<div class="portada grano">
+  <div class="portada-foto">
+    <img src="../assets/img/svatia/svatia-01.jpg"
+         alt="Pabellón principal de SVATIA, en la costa de Yucatán" fetchpriority="high">
+  </div>
+
+  <div class="marco">
+    <div class="portada-reja">
+
+      <div>
+        <h1 class="declara entra d1">Coffee Break: tómate un café y asegura tu patrimonio</h1>
+
+        <div class="marcas-hero entra d2">
+          <img src="../assets/img/logo/desarrollos/svatia-white.png" alt="SVATIA Telchac" class="sv">
+        </div>
+
+        <p class="zona entra d2">Telchac, Yucatán</p>
+
+        <div class="cuando entra d3">
+          <div><span class="k">Fecha</span><span class="v">Sábado 03 de octubre 2026</span></div>
+          <div><span class="k">Hora</span><span class="v">11:00 am</span></div>
+          <div><span class="k">Sede</span><span class="v">Torre Inxignia, Puebla</span></div>
+        </div>
+
+        <div class="reloj entra d4">
+          <p class="rotulo">Cupo limitado · el registro cierra en</p>
+          <div class="reloj-caja" id="reloj" aria-live="polite">
+            <div class="unidad"><b id="r-d">–</b><span>Días</span></div>
+            <div class="unidad"><b id="r-h">–</b><span>Horas</span></div>
+            <div class="unidad"><b id="r-m">–</b><span>Min</span></div>
+            <div class="unidad"><b id="r-s">–</b><span>Seg</span></div>
+          </div>
+        </div>
+
+        <p class="bajada entra d4">
+          Un café con Manuel Barajas, GH Partner, para conocer el desarrollo de la costa
+          yucateca que llevas meses considerando. <b>Más de la mitad de SVATIA ya se
+          vendió.</b> Terrenos desde $400,000, con financiamiento directo del
+          desarrollador y sin revisión de buró.
+        </p>
+      </div>
+
+      <!-- ── Registro ── -->
+      <div class="panel entra d3" id="registro">
+        <div id="paso-forma">
+          <p class="urge"><i class="brasa"></i> Últimos lugares</p>
+          <h2>Aparta tu lugar</h2>
+          <p class="dice">Déjanos tus datos y te confirmamos por WhatsApp. Sin registro no hay acceso.</p>
+
+          <form id="forma" novalidate>
+            <div class="campo">
+              <label for="nombre">Tu nombre completo</label>
+              <input type="text" id="nombre" name="nombre" autocomplete="name"
+                     placeholder="Nombre y apellido" required>
+              <p class="alerta" id="a-nombre">Escribe tu nombre y tu apellido.</p>
+            </div>
+            <div class="campo">
+              <label for="whatsapp">WhatsApp a 10 dígitos</label>
+              <input type="tel" id="whatsapp" name="whatsapp" inputmode="numeric"
+                     autocomplete="tel-national" maxlength="10" placeholder="7711234567" required>
+              <p class="alerta" id="a-whatsapp">Faltan dígitos: necesitamos los 10 para confirmarte.</p>
+            </div>
+            <div class="campo">
+              <label for="correo">Tu correo</label>
+              <input type="email" id="correo" name="correo" autocomplete="email"
+                     placeholder="nombre@correo.com" required>
+              <p class="alerta" id="a-correo">Revisa el correo, parece incompleto.</p>
+            </div>
+            <div class="campo">
+              <label for="interes">Qué te interesa del evento</label>
+              <select id="interes" name="interes" required>
+                <option value="" selected disabled>Elige una opción</option>
+                <option>Invertir para plusvalía</option>
+                <option>Comprar un lote para vacacionar</option>
+                <option>Conocer SVATIA</option>
+                <option>Entender los planes de pago</option>
+                <option>Soy asesor inmobiliario</option>
+              </select>
+              <p class="alerta" id="a-interes">Elige la opción que más se acerque.</p>
+            </div>
+            <div class="permiso">
+              <input type="checkbox" id="acepto" name="acepto" required>
+              <label for="acepto">Autorizo que me contacten por WhatsApp sobre este evento y
+                acepto el <a href="#privacidad">aviso de privacidad</a>.</label>
+            </div>
+            <p class="alerta" id="a-acepto">Necesitamos tu autorización para poder escribirte.</p>
+
+            <button type="submit" class="boton" id="btn"><span id="btn-txt">Apartar mi lugar</span></button>
+            <p class="bajo">Sin compromiso de compra. Te confirmamos por WhatsApp en minutos.</p>
+          </form>
+        </div>
+
+        <div class="listo" id="paso-listo">
+          <div class="palomita"><svg width="30" height="30" viewBox="0 0 24 24"><path d="M4 12.5l5.5 5.5L20 7"/></svg></div>
+          <h2>Lugar apartado</h2>
+          <p>Te esperamos el sábado 3 de octubre a las 11:00 am, en el Coffee Break de
+             SVATIA. <b>Nosotros te vamos a escribir por WhatsApp en breve</b> para
+             confirmar tu lugar y mandarte la ubicación.</p>
+          <p style="margin-top:18px;font-size:13px;color:var(--humo)">¿No quieres esperar? <a id="ir-wsp" href="#" rel="noopener">Escríbenos tú primero</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ FRANJA DE URGENCIA ══════════ -->
+<div class="franja">
+  <div class="franja-reja">
+    <div class="golpe">
+      <b>+50%</b>
+      <span>de SVATIA ya tiene dueño. Las primeras privadas son las que antes se entregan, y son las que primero se acaban.</span>
+    </div>
+    <div class="golpe">
+      <b>15%</b>
+      <span>de plusvalía estimada al año. Cada mes que lo piensas, el metro cuadrado que querías cuesta más.</span>
+    </div>
+    <div class="golpe">
+      <b>1 día</b>
+      <span>Un solo Coffee Break en Puebla. Después de esto, para ver el inventario tendrías que viajar a Yucatán.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ LOS DOS DESARROLLOS ══════════ -->
+<section class="dos">
+  <div class="marco">
+    <p class="rotulo">Lo que vas a ver</p>
+    <h2 class="titular">Un desarrollo de GH en la costa yucateca.</h2>
+    <p class="parrafo">SVATIA, en Telchac, a minutos de la playa, con financiamiento
+      directo del desarrollador. En un café te mostramos el master plan y decides si te
+      conviene.</p>
+
+    <div class="dos-reja">
+      <div class="ficha">
+        <div class="foto">
+          <img src="../assets/img/svatia/svatia-02.jpg" loading="lazy" alt="Amenidades de SVATIA Telchac">
+          <div class="marca"><img src="../assets/img/logo/desarrollos/svatia-white.png" alt="SVATIA Telchac"></div>
+        </div>
+        <div class="cuerpo">
+          <p class="lema">Un desarrollo holístico</p>
+          <ul class="lista">
+            <li>Superficie <b>21 hectáreas</b></li>
+            <li>Lotes <b>795</b></li>
+            <li>Tamaños <b>135 a 200 m²</b></li>
+            <li>Privadas <b>4</b></li>
+            <li>A la playa de Telchac <b>15 minutos</b></li>
+            <li>Entrada desde <b>$400,000</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SVATIA ══════════ -->
+<section>
+  <div class="marco">
+    <p class="rotulo">SVATIA Telchac</p>
+    <h2 class="titular">Cuatro privadas, y las dos primeras se entregan en 2029.</h2>
+    <p class="parrafo">Vania y Avana son las que antes se entregan, y por eso son las que
+      primero se agotan. La disponibilidad exacta de cada una se revisa contigo el día del
+      evento.</p>
+
+    <!-- PENDIENTE: pedir a GH Desarrollos/Box el master plan real con las 4 privadas rotuladas
+         (fechas-entrega.jpg no vino con el HTML que mandaron) -- mientras tanto se omite la imagen,
+         las tarjetas de abajo ya traen la misma información en texto. -->
+
+    <div class="privadas">
+      <div class="privada pronto"><h3>Vania</h3><p class="lotes">208</p>
+        <p class="cuando">lotes, entrega diciembre 2029</p></div>
+      <div class="privada pronto"><h3>Avana</h3><p class="lotes">158</p>
+        <p class="cuando">lotes, entrega diciembre 2029</p></div>
+      <div class="privada"><h3>Dara</h3><p class="lotes">139</p>
+        <p class="cuando">lotes, entrega diciembre 2031</p></div>
+      <div class="privada"><h3>Varuna</h3><p class="lotes">290</p>
+        <p class="cuando">lotes, entrega diciembre 2032</p></div>
+    </div>
+
+    <div class="mosaico">
+      <div class="pieza alta fuego">
+        <img src="../assets/img/svatia/svatia-01.jpg" loading="lazy" alt="Pabellón principal iluminado al atardecer">
+        <div class="velo"></div>
+        <div class="letra"><h3>Fuego</h3><p class="cual">Luz, energía, pasión</p>
+          <p>Pabellón principal, terraza, tarima y juice bar.</p></div>
+      </div>
+      <div class="pieza alta">
+        <img src="../assets/img/svatia/svatia-02.jpg" loading="lazy" alt="Área de yoga bajo palapa">
+        <div class="velo"></div>
+        <div class="letra"><h3>Tierra</h3><p class="cual">Protección, equilibrio, solidez</p>
+          <p>Gimnasio al aire libre, área de yoga y piscina rodeada de vegetación.</p></div>
+      </div>
+      <div class="pieza alta trazo">
+        <img src="../assets/img/svatia/svatia-03.jpg" loading="lazy" alt="Plano de la zona de piscinas">
+        <div class="velo"></div>
+        <div class="letra"><h3>Agua</h3><p class="cual">Frescura, fluidez, transparencia</p>
+          <p>Piscina sensorial, piscina de masajes, jacuzzi, sauna, hamacas, fuentes
+             interactivas y cine al aire libre.</p></div>
+      </div>
+      <div class="pieza todo">
+        <img src="../assets/img/svatia/svatia-06.jpg" loading="lazy" alt="Sendero de arena blanca">
+        <div class="velo"></div>
+        <div class="letra"><h3>Aire</h3><p class="cual">Ligereza, movimiento, serenidad</p>
+          <p>Mirador, huerto vertical, área de floricultura, jardines y asoleaderos, unidos
+             por senderos de calle blanca.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ UBICACIÓN ══════════ -->
+<section>
+  <div class="marco">
+    <p class="rotulo">Dónde están</p>
+    <h2 class="titular">La franja de costa que lleva años subiendo.</h2>
+    <p class="parrafo">Entre Telchac y Xcambó, al norte de Mérida. Es el corredor donde el
+      metro cuadrado se ha revalorizado de forma sostenida.</p>
+    <!-- PENDIENTE: svatia-ubicacion-nuevo.jpg (mapa ilustrado) no vino con el HTML -- mientras
+         tanto, mapa real embebido (mismo patron que desarrollo-svatia.html). -->
+    <div class="mapa">
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Telchac, Yucatán"
+              src="https://maps.google.com/maps?q=Telchac%20Puerto%20Yucatan&z=11&output=embed"
+              style="width:100%;height:340px;border:0;display:block"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONDICIONES ══════════ -->
+<section class="dos">
+  <div class="marco">
+    <p class="rotulo">Las condiciones</p>
+    <h2 class="titular">Lo que conviene saber antes de firmar.</h2>
+    <div class="cond-reja">
+      <div class="cond"><h3>Financiamiento directo</h3>
+        <p>Con el desarrollador, sin revisión de buró de crédito. El enganche se puede cubrir
+           hasta en seis meses, incluso con tarjeta.</p></div>
+      <div class="cond"><h3>Mantenimiento en SVATIA</h3>
+        <p>Tres pesos por metro cuadrado al mes. Al escriturar se cubren dos años por
+           adelantado más $2,000 al fondo de contingencia. No sube los primeros dos años.</p></div>
+      <div class="cond"><h3>Cuándo puedes construir</h3>
+        <p>A partir de la entrega del desarrollo y de liquidar tu lote. Después no hay plazo
+           obligatorio: construyes cuando quieras.</p></div>
+      <div class="cond"><h3>Escrituración</h3>
+        <p>Régimen de condominio, con la notaría del desarrollo a precio preferente. Una
+           vivienda por lote, aprobada por el comité de arquitectura.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ LO QUE TE PIERDES ══════════ -->
+<section class="pierdes">
+  <div class="marco">
+    <p class="rotulo">Si no te registras</p>
+    <h2 class="titular">Esto es lo que no vas a ver.</h2>
+    <p class="parrafo">Ninguna de estas cuatro cosas está publicada en internet. Se muestran
+      el sábado 3 de octubre, en el Coffee Break en Puebla, en persona y solo a quien se
+      registró.</p>
+
+    <ul class="perdidas">
+      <li><b>La disponibilidad real de hoy</b>
+        <p>Qué lotes quedan en Vania y Avana, las privadas que se entregan en 2029. Ese
+           inventario cambia cada semana y no se publica.</p></li>
+      <li><b>Los precios vigentes del día</b>
+        <p>El precio por metro cuadrado con el que puedes cerrar ese día.</p></li>
+      <li><b>Tus números, corridos contigo</b>
+        <p>Enganche, mensualidad y proyección de plusvalía calculados sobre tu presupuesto
+           real, no sobre un ejemplo genérico.</p></li>
+      <li><b>Un café con Manuel Barajas</b>
+        <p>Resuelve tus dudas uno a uno con el GH Partner que conoce el desarrollo. Después
+           del 3 de octubre tendrías que viajar a Yucatán para verlo.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════ EVENTO ══════════ -->
+<section class="evento grano">
+  <div class="evento-foto"><img src="../assets/img/svatia/svatia-05.jpg" loading="lazy" alt=""></div>
+  <div class="marco">
+    <p class="rotulo">El Coffee Break</p>
+    <h2 class="titular">Sábado 3 de octubre, en Puebla.</h2>
+    <p class="parrafo">Tómate un café con Manuel Barajas, GH Partner, en una sesión privada
+       con asesoría uno a uno. No necesitas viajar a Yucatán para decidir.</p>
+
+    <div class="donde">
+      <div class="dato"><p class="k">Cuándo</p>
+        <p class="v">11:00 am<small>Llega quince minutos antes.</small></p></div>
+      <div class="dato"><p class="k">Dónde</p>
+        <p class="v">Torre Inxignia, Piso 4<small>Atlixcáyotl 2210, Corredor Comercial, Puebla de Zaragoza, Puebla.</small></p></div>
+      <div class="dato"><p class="k">Acceso</p>
+        <p class="v">Solo registrados<small>Cupo limitado. Confirmamos por WhatsApp.</small></p></div>
+    </div>
+
+    <ul class="pasos">
+      <li><b>El master plan de SVATIA</b>
+          <p>Las cuatro privadas, con sus fechas de entrega.</p></li>
+      <li><b>Disponibilidad y precios del día</b>
+          <p>Qué queda y cuánto cuesta.</p></li>
+      <li><b>Tu plan de pagos</b>
+          <p>Enganche, mensualidad y plusvalía sobre tu presupuesto.</p></li>
+      <li><b>Cómo se escritura</b>
+          <p>Régimen, notaría y costos del día de la firma. Sin presión para firmar ese día.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════ CIERRE ══════════ -->
+<section class="cierre grano">
+  <div class="cierre-foto"><img src="../assets/img/svatia/svatia-07.jpg" loading="lazy" alt=""></div>
+  <div class="marco">
+    <h2>El sábado 3 de octubre se cierra. <em>No hay segunda fecha.</em></h2>
+    <p>Regístrate ahora y te confirmamos por WhatsApp en minutos. Sin compromiso de compra,
+       pero sin registro no hay acceso.</p>
+    <p class="cuenta" id="cuenta">Cargando…</p>
+    <a class="ir" href="#registro">Apartar mi lugar</a>
+  </div>
+</section>
+
+<!-- ══════════ PIE ══════════ -->
+<footer id="privacidad">
+  <div class="marco">
+    <div class="pie-reja">
+      <div>
+        <div class="sellos" style="margin-bottom:14px">
+          <img src="../assets/img/logo/desarrollos/svatia-white.png" alt="SVATIA Telchac" class="sv">
+        </div>
+        <p>Desarrollo residencial en Telchac, Yucatán.</p>
+      </div>
+      <div><h4>Escríbenos</h4>
+        <p><a href="https://wa.me/525635115599" rel="noopener">WhatsApp 56 3511 5599</a></p></div>
+      <div><h4>Quién construye</h4>
+        <p>SVATIA lo desarrolla BGR Soluciones en Inmuebles, en alianza con GH Desarrollos
+           —más de 25 años desarrollando, #InversiónSegura (<a href="https://svatia.mx" rel="noopener" target="_blank">svatia.mx</a>).
+           Comercializan GH Desarrollos y Habex Real Estate. Anfitrión del Coffee Break:
+           Manuel Barajas, GH Partner.</p></div>
+      <div><h4>Tus datos</h4>
+        <p>Los usamos solo para confirmar tu registro y darte seguimiento. No los compartimos
+           con terceros ajenos al proyecto. Pide tu baja por WhatsApp cuando quieras.</p></div>
+    </div>
+    <p class="chico">
+      Imágenes y renders de carácter ilustrativo. Precios, disponibilidad y fechas de entrega
+      sujetos a cambio sin previo aviso. La plusvalía señalada es una estimación del
+      desarrollador y no constituye garantía de rendimiento. El cupo del evento es limitado
+      por capacidad de la sede. Consulta las condiciones completas con tu asesor antes de firmar.
+    </p>
+  </div>
+</footer>
+
+<a class="wsp" href="https://wa.me/525635115599?text=Hola%2C%20quiero%20registrarme%20para%20el%20Coffee%20Break%20de%20SVATIA%20en%20Puebla."
+   target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8 8 0 01-2.4-1.5 9 9 0 01-1.6-2c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1a11.4 11.4 0 004.4 3.9c.6.2 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/><path d="M12 2a10 10 0 00-8.5 15.3L2 22l4.8-1.5A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 1 1-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
+</a>
+
+<div class="barra">
+  <p class="q">Sábado 3 oct, 11:00 am<b>Cupo limitado</b></p>
+  <a href="#registro">Apartar lugar</a>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   CONFIGURACIÓN — lo único que necesitas tocar
+   ═══════════════════════════════════════════════════════════ */
+var CONFIG = {
+  // Backend de habex-agentes (POST /leads/evento-pachuca). Guarda el registro en
+  // Leads_Habex y deja precargados nombre/correo/interes para que el bot no los
+  // vuelva a preguntar cuando el prospecto escriba por WhatsApp.
+  // PENDIENTE: reemplazar por la URL publica real (hoy solo n8n tiene tunel
+  // expuesto -- ver README de habex-agentes, seccion del tunel de Cloudflare).
+  API_URL:        "https://audience-complement-color-depend.trycloudflare.com/leads/evento-pachuca",
+  WHATSAPP:       "525635115599",
+  LIMITE:         "2026-10-03T11:00:00-06:00",
+  META_PIXEL_ID:  ""
+};
+
+/* ── Píxel de Meta ─────────────────────────────────────────── */
+(function(){
+  if(!CONFIG.META_PIXEL_ID) return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+  (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', CONFIG.META_PIXEL_ID); fbq('track','PageView');
+})();
+
+/* ── Cuenta regresiva ──────────────────────────────────────── */
+(function(){
+  var meta = new Date(CONFIG.LIMITE).getTime();
+  var d=document.getElementById('r-d'), h=document.getElementById('r-h'),
+      m=document.getElementById('r-m'), s=document.getElementById('r-s'),
+      frase=document.getElementById('cuenta');
+  function pad(n){ return n<10 ? '0'+n : ''+n; }
+  function pinta(){
+    var falta = meta - Date.now();
+    if(falta <= 0){
+      if(d){ d.textContent=h.textContent=m.textContent=s.textContent='00'; }
+      if(frase) frase.textContent = 'El registro ya cerró.';
+      return;
+    }
+    var seg = Math.floor(falta/1000);
+    var dd = Math.floor(seg/86400), hh = Math.floor(seg%86400/3600),
+        mm = Math.floor(seg%3600/60), ss = seg%60;
+    if(d){ d.textContent=pad(dd); h.textContent=pad(hh); m.textContent=pad(mm); s.textContent=pad(ss); }
+    if(frase) frase.textContent = dd > 0
+      ? 'Faltan ' + dd + (dd===1?' día y ':' días y ') + hh + (hh===1?' hora':' horas')
+      : 'Faltan ' + hh + (hh===1?' hora':' horas');
+  }
+  pinta(); setInterval(pinta, 1000);
+})();
+
+/* ── Registro ──────────────────────────────────────────────── */
+(function(){
+  var forma = document.getElementById('forma');
+  if(!forma) return;
+  var btn   = document.getElementById('btn');
+  var txt   = document.getElementById('btn-txt');
+  var pasoF = document.getElementById('paso-forma');
+  var pasoL = document.getElementById('paso-listo');
+  var irWsp = document.getElementById('ir-wsp');
+
+  function marca(id, mal){
+    var av = document.getElementById('a-'+id), ca = document.getElementById(id);
+    if(av) av.classList.toggle('ver', mal);
+    if(ca) ca.setAttribute('aria-invalid', mal ? 'true' : 'false');
+  }
+  document.getElementById('whatsapp').addEventListener('input', function(){
+    this.value = this.value.replace(/\D/g,'').slice(0,10);
+  });
+
+  function revisa(){
+    var bien = true;
+    var nom = document.getElementById('nombre').value.trim();
+    var wa  = document.getElementById('whatsapp').value.replace(/\D/g,'');
+    var mail= document.getElementById('correo').value.trim();
+    var int = document.getElementById('interes').value;
+    var ok  = document.getElementById('acepto').checked;
+
+    var malNom = nom.length < 5 || nom.indexOf(' ') === -1;
+    marca('nombre', malNom);    if(malNom) bien = false;
+    var malWa = wa.length !== 10;
+    marca('whatsapp', malWa);   if(malWa) bien = false;
+    var malMail = !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail);
+    marca('correo', malMail);   if(malMail) bien = false;
+    var malInt = !int;
+    marca('interes', malInt);   if(malInt) bien = false;
+    marca('acepto', !ok);       if(!ok) bien = false;
+    return bien;
+  }
+
+  forma.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if(!revisa()){
+      var primero = forma.querySelector('[aria-invalid="true"]');
+      if(primero) primero.focus();
+      return;
+    }
+    var datos = {
+      nombre:   document.getElementById('nombre').value.trim(),
+      whatsapp: document.getElementById('whatsapp').value.replace(/\D/g,''),
+      correo:   document.getElementById('correo').value.trim(),
+      interes:  document.getElementById('interes').value,
+      evento:   'Coffee Break SVATIA Telchac, Puebla 3 oct 2026',
+      // Mismos 3 datos que el 'evento' de arriba, pero separados: la plantilla de
+      // WhatsApp y el workflow de n8n los usan como variables independientes
+      // ({{evento_nombre}}, {{evento_fecha}}, {{evento_lugar}}) para poder
+      // reusar la MISMA plantilla/workflow en el siguiente evento sin tocar
+      // codigo -- ver HEADERS en app/sheets.py y POST /leads/evento-pachuca.
+      eventoNombre: 'SVATIA Telchac',
+      eventoFecha:  'sábado 3 de octubre',
+      eventoLugar:  'Puebla, Torre Inxignia',
+      origen:   (document.referrer || 'directo'),
+      utm:      window.location.search || '',
+      fecha:    new Date().toLocaleString('es-MX', { timeZone:'America/Mexico_City' })
+    };
+
+    btn.disabled = true; txt.textContent = 'Apartando…';
+
+    var recado = 'Hola, soy ' + datos.nombre + '. Aparté mi lugar para el Coffee Break '
+               + 'de SVATIA del sábado 3 de octubre en Puebla. '
+               + 'Me interesa: ' + datos.interes + '.';
+    var liga = 'https://wa.me/' + CONFIG.WHATSAPP + '?text=' + encodeURIComponent(recado);
+
+    function cierra(){
+      // El contacto lo inicia NOSOTROS (el bot, via WhatsApp Business), no el
+      // visitante -- por eso ya no se redirige automaticamente a WhatsApp.
+      // El link "Escribenos tu primero" sigue disponible como salida opcional
+      // para quien no quiera esperar.
+      if(window.fbq) fbq('track','Lead',{ content_name:'Coffee Break SVATIA Puebla 3 oct' });
+      pasoF.style.display = 'none';
+      pasoL.classList.add('ver');
+      irWsp.href = liga;
+      pasoL.scrollIntoView({ block:'center', behavior:'smooth' });
+    }
+
+    // Guardar en Leads_Habex es lo que de verdad importa aqui: es lo unico que
+    // dispara el contacto proactivo del bot (workflow landing-evento-pachuca-
+    // outbound.json). Si falla, hay que saberlo -- ya no hay una salida de
+    // respaldo automatica a WhatsApp como antes, asi que un error aqui de
+    // verdad significa "no quedaste registrado".
+    fetch(CONFIG.API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nombre: datos.nombre,
+        telefono: datos.whatsapp,
+        correo: datos.correo,
+        interes: datos.interes,
+        evento_nombre: datos.eventoNombre,
+        evento_fecha: datos.eventoFecha,
+        evento_lugar: datos.eventoLugar
+      })
+    }).then(function(res){
+      if(!res.ok) throw new Error('respuesta ' + res.status);
+      cierra();
+    }).catch(function(err){
+      console.error('No se pudo guardar el registro:', err);
+      btn.disabled = false; txt.textContent = 'Apartar mi lugar';
+      var av = document.getElementById('a-acepto');
+      if(av){ av.textContent = 'No pudimos guardar tu registro, intenta de nuevo en un momento o escríbenos por WhatsApp.'; av.classList.add('ver'); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
