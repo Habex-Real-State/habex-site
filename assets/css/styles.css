@@ -875,3 +875,20 @@ body.dp .nav{background:rgba(15,14,12,.92);backdrop-filter:blur(8px);box-shadow:
   .cookie-btns{width:100%}
   .cookie-btn{flex:1}
 }
+
+
+/* --- Aviso superior de temporada (lo crea main.js; hoy: El Buen Fin 2026) ---
+   Va fijo arriba de todo; el menú y la barra fija de las fichas bajan lo que
+   mida (--aviso-h), y el contenido se recorre lo mismo. */
+.aviso-sup{position:fixed;top:0;left:0;width:100%;z-index:55;display:flex;align-items:center;justify-content:center;
+  flex-wrap:wrap;gap:4px 14px;background:var(--oro-grad);color:var(--negro);
+  padding:9px 48px 9px 16px;font-size:.78rem;line-height:1.4;text-align:center;letter-spacing:.02em}
+.aviso-sup b{font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.aviso-sup .sep{opacity:.45;margin:0 6px}
+.aviso-sup a.ir{color:var(--negro);font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.aviso-sup .cerrar{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:36px;height:36px;border:0;
+  background:transparent;color:var(--negro);font-size:1.25rem;line-height:1;cursor:pointer;opacity:.7}
+.aviso-sup .cerrar:hover{opacity:1}
+html.con-aviso body{padding-top:var(--aviso-h,0px)}
+html.con-aviso .nav,html.con-aviso .sticky-cta{top:var(--aviso-h,0px)}
+@media(max-width:640px){.aviso-sup .solo-ancho{display:none}.aviso-sup{font-size:.74rem}}

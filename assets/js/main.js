@@ -54,6 +54,61 @@
     if (trigger) so.observe(trigger);
   }
 
+  /* --- Aviso superior de temporada (El Buen Fin 2026) ---
+     Barra arriba de todo el sitio que se apaga sola por fecha (hora del centro
+     de México): hasta el webinar invita a registrarse; después, hasta el 17,
+     anuncia las promociones. Para otra temporada, cambia AVISOS y KEY. Quien
+     la cierra no la vuelve a ver durante esa visita. Se crea antes de aplicar
+     el idioma para que setLang() también la traduzca. */
+  (function () {
+    var KEY = 'habex-aviso-cerrado-buenfin2026';
+    var AVISOS = [
+      { hasta: '2026-11-14T14:00:00-06:00', ancla: '',
+        es: '<b>El Buen Fin 2026</b><span class="sep solo-ancho">·</span><span class="solo-ancho">Somos participantes oficiales</span><span class="sep">·</span>Webinars<span class="solo-ancho"> en vivo</span> el sábado 14<span class="solo-ancho"> de noviembre, registro sin costo</span>',
+        en: '<b>El Buen Fin 2026</b><span class="sep solo-ancho">·</span><span class="solo-ancho">Official participants</span><span class="sep">·</span>Live webinars on Saturday, Nov 14<span class="solo-ancho">, free registration</span>',
+        irEs: 'Elige tu webinar →', irEn: 'Choose your webinar →' },
+      { hasta: '2026-11-18T00:00:00-06:00', ancla: '#condiciones',
+        es: '<b>El Buen Fin 2026</b><span class="sep solo-ancho">·</span><span class="solo-ancho">Somos participantes oficiales</span><span class="sep">·</span>Promociones<span class="solo-ancho"> directo con el desarrollador</span> hasta el 17 de noviembre',
+        en: '<b>El Buen Fin 2026</b><span class="sep solo-ancho">·</span><span class="solo-ancho">Official participants</span><span class="sep">·</span>Offers<span class="solo-ancho"> straight from the developer</span> through November 17',
+        irEs: 'Ver promociones →', irEn: 'See the offers →' }
+    ];
+    var ahora = Date.now(), aviso = null;
+    for (var i = 0; i < AVISOS.length; i++) {
+      if (ahora < new Date(AVISOS[i].hasta).getTime()) { aviso = AVISOS[i]; break; }
+    }
+    if (!aviso) return;
+    try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
+
+    function attr(s) { return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;'); }
+    var url = (/\/pages\//.test(location.pathname) ? '' : 'pages/') + 'buenfin.html' + aviso.ancla;
+    var bar = document.createElement('div');
+    bar.className = 'aviso-sup';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'El Buen Fin 2026');
+    bar.innerHTML =
+      '<span data-es="' + attr(aviso.es) + '" data-en="' + attr(aviso.en) + '">' + aviso.es + '</span>' +
+      '<a class="ir" href="' + url + '" data-es="' + attr(aviso.irEs) + '" data-en="' + attr(aviso.irEn) + '">' + aviso.irEs + '</a>' +
+      '<button type="button" class="cerrar" aria-label="Cerrar aviso">×</button>';
+    var skip = document.querySelector('.skip-link');
+    document.body.insertBefore(bar, skip ? skip.nextSibling : document.body.firstChild);
+
+    var root = document.documentElement;
+    function mide() { root.style.setProperty('--aviso-h', bar.offsetHeight + 'px'); }
+    root.classList.add('con-aviso');
+    mide();
+    window.addEventListener('resize', mide);
+    bar.querySelector('.cerrar').addEventListener('click', function () {
+      try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+      window.removeEventListener('resize', mide);
+      bar.parentNode.removeChild(bar);
+      root.classList.remove('con-aviso');
+      root.style.removeProperty('--aviso-h');
+    });
+    bar.querySelector('a.ir').addEventListener('click', function () {
+      if (typeof gtag === 'function') gtag('event', 'clic_aviso_buen_fin');
+    });
+  })();
+
   /* --- Idioma ES / EN --- */
   var current = 'es';
   function setLang(lang) {
